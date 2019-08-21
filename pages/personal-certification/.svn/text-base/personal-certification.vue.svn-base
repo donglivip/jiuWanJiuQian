@@ -1,0 +1,99 @@
+<template>
+	<view class="wrapper">
+		<view class="main">
+			<view class="main-one">适用：个人采购、供应者</view>
+			<view class="main-box">
+				<view class="main-x"> 为增加产品及采供信息曝光度，建议商家使用“企业认证”</view>
+				<view class="box-top">
+					<view class="box-text"><text>*</text>姓名</view>
+					<input type="text" value="" placeholder="请输入姓名" placeholder-class="qiugou"/>
+				</view>
+				<view class="box-top">
+					<view class="box-text"><text>*</text>身份证号码</view>
+					<input type="text" value="" placeholder="请输入身份证号码" placeholder-class="qiugou"/>
+				</view>
+			</view>
+		</view>
+		<view class="bottom" @tap="opennew('businessmen-stationed')">提  交</view>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				
+			}
+		},
+		methods: {
+			opennew:function(id){
+				uni.navigateTo({
+					url: '../'+id+'/'+id
+				});
+				
+			}
+		}
+	}
+</script>
+
+<style>
+.wrapper,uni-page-body, uni-page-refresh,page{
+		background: #F9F9F9;height: 100%;overflow: hidden;
+}
+.main{
+	height: calc(100% - 100rpx);
+}
+.main-one{
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	height: 90rpx;
+	font-size: 26rpx;
+	color: #999999;
+	padding: 0 30rpx;
+}
+.main-box{
+	height: 280rpx;
+	padding: 0 30rpx;
+	background: #FFFFFF;
+}
+.main-x{
+	height: 90rpx;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	font-size: 26rpx;
+	color: #F56C6C;
+}
+.box-top{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 95rpx;
+	border-bottom: 1rpx solid #E5E5E5;
+}
+.box-text{
+	font-size: 30rpx;
+	color: #000000;
+}
+text{
+	font-size: 30rpx;
+	color: #FF0000;
+}
+input{
+	text-align: right;
+	font-size: 28rpx;
+	padding: 0 30rpx;
+}
+.bottom{
+	height: 100rpx;
+	background: #008A05;
+	width: 100%;
+	font-size: 36rpx;
+	color: #FFFFFF;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+</style>

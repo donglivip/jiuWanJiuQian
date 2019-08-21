@@ -1,0 +1,76 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/wode/wode",
+    "pages/sousuo/sousuo",
+    "pages/shaixuan/shaixuan",
+    "pages/qiugouxiangqing/qiugouxiangqing",
+    "pages/qiugouxiangqing2/qiugouxiangqing2",
+    "pages/baojiabiao/baojiabiao",
+    "pages/biaojiachenggong/biaojiachenggong",
+    "pages/shouhuodizhi/shouhuodizhi",
+    "pages/purchase-classification/purchase-classification",
+    "pages/additional-items/additional-items",
+    "pages/my-purchase/my-purchase",
+    "pages/release-notice/release-notice",
+    "pages/purchase-details/purchase-details",
+    "pages/my-wallet/my-wallet",
+    "pages/cash-withdrawal/cash-withdrawal",
+    "pages/my-certification/my-certification",
+    "pages/enterprise-certification/enterprise-certification",
+    "pages/personal-certification/personal-certification",
+    "pages/businessmen-stationed/businessmen-stationed",
+    "pages/my-quotation/my-quotation",
+    "pages/modify-address/modify-address",
+    "pages/add-address/add-address",
+    "pages/merchants-whosell/merchants-whosell",
+    "pages/vip/vip",
+    "pages/changeAdress/changeAdress",
+    "pages/VerificationPhone/VerificationPhone",
+    "pages/openshop/openshop",
+    "pages/merchantsNext/merchantsNext",
+    "pages/share/share",
+    "pages/dividend/dividend"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "久万久千",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#F9F9F9"
+  },
+  "tabBar": {
+    "color": "#333333",
+    "selectedColor": "#008A05",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/zhao.png",
+        "selectedIconPath": "static/lvzhao.png",
+        "text": "找商机"
+      },
+      {
+        "pagePath": "pages/additional-items/additional-items",
+        "iconPath": "static/jia.png",
+        "selectedIconPath": "static/lvjia.png",
+        "text": "发布求购"
+      },
+      {
+        "pagePath": "pages/wode/wode",
+        "iconPath": "static/xiao.png",
+        "selectedIconPath": "static/lvxiao.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "nvueCompiler": "weex",
+  "renderer": "auto",
+  "splashscreen": {
+    "alwaysShowBeforeRender": false,
+    "autoclose": true
+  },
+  "appname": "久万久千",
+  "compilerVersion": "2.2.2",
+  "usingComponents": {}
+}

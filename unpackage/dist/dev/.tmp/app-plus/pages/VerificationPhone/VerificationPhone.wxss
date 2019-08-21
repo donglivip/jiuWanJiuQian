@@ -1,0 +1,125 @@
+
+.statement image {
+	width: 34rpx;
+	height: 34rpx;
+	margin-right: 20rpx;
+}
+.statement {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.submit {
+	background:rgba(0,138,5,1);
+	border:2rpx solid rgba(5,5,5,0.08235294117647057);
+	border-radius: 50rpx;
+	text-align: center;
+	width: 670rpx;
+	height: 98rpx;
+	line-height: 98rpx;
+	color: #ffffff;
+	font-size: 36rpx;
+	margin: 30rpx auto;
+}
+.bottom text {
+	color: #008a05;
+}
+.bottom {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	color: #666666;
+	font-size: 26rpx;
+}
+.code-box input {
+	width: 60rpx;
+	border-bottom: 1px solid #008a05;
+	height: 60rpx;
+	text-align: center;
+	line-height: 60rpx;
+	margin: 0 36rpx;
+}
+.code-box {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	padding: 70rpx 30rpx 50rpx;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+.phone-btn {
+	border: 1px solid #008a05;
+	color: #008a05;
+	border-radius: 30rpx;
+	width: 200rpx;
+	height: 60rpx;
+	text-align: center;
+	line-height: 60rpx;
+	margin: 0 30rpx;
+	font-size: 30rpx;
+}
+.phone-top {
+	border-bottom: 1px solid #e8e8e8;
+	height: 97rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.phone-top input {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+	text-indent: 35rpx;
+}
+.phone-box {
+	background: #ffffff;
+	border-radius: 20rpx;
+	margin: 39rpx 30rpx 239rpx;
+	-webkit-box-shadow:0px 3px 10px rgba(0,0,0,0.16);
+	        box-shadow:0px 3px 10px rgba(0,0,0,0.16);
+}
+.wrapper,
+uni-page-body,
+uni-page-refresh,
+page {
+	background: #f9f9f9;
+	height: 100%;
+	overflow: hidden;
+}
+.title {
+	font-size: 40rpx;
+	color: #333333;
+	margin: 43rpx 30rpx 20rpx;
+	font-weight: 600;
+}
+.text {
+	font-size: 30rpx;
+	color: #666666;
+	margin: 0 30rpx 87rpx;
+	font-weight: 600;
+}
+.alert {
+	color: #008a05;
+	text-align: center;
+	font-size: 24rpx;
+}
+

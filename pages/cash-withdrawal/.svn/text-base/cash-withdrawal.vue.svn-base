@@ -1,0 +1,119 @@
+<template>
+	<view class="wrapper">
+		<view class="main">
+			<view class="main-box">
+				<view class="main-top"></view>
+				<view class="main-a">请输入提现金额</view>	
+				<view class="main-content">
+					<view class="c-text">金额(元)</view>
+					<input type="text" value="" placeholder="您的可提现额度为12,352元" placeholder-class="qian"/>
+				</view>
+				<view class="main-bottom">
+					<view class="b-top">
+						<image src="../../static/jine.png" mode=""></image>
+						<view class="b-text">提现至--微信钱包(零钱)</view>
+					</view>
+					<view class="b-bott">提现</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				
+			}
+		},
+		methods: {
+			
+		}
+	}
+</script>
+
+<style>
+.wrapper,uni-page-body, uni-page-refresh,page{
+		background: #F9F9F9;height: 100%;overflow: hidden;
+}
+.main{
+	height: 100%;
+}
+.main-box{
+	height: 410rpx;
+	margin: 80rpx 30rpx 0 30rpx;
+	background: #FFFFFF;
+	border-top-left-radius: 10rpx;
+	border-top-right-radius: 10rpx;
+}
+.main-top{
+	background: #008A05;
+	height: 15rpx;
+	width: 690rpx;
+	border-top-left-radius: 10rpx;
+	border-top-right-radius: 10rpx;
+}
+.main-a{
+	padding: 0 30rpx;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	font-size: 24rpx;
+	color: #7E7E7E;
+	height: 110rpx;
+}
+.main-content{
+	padding: 0 30rpx;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	margin-bottom: 54rpx;
+}
+.c-text{
+	font-size: 28rpx;
+	color: #333333;
+	margin-right: 30rpx;
+}
+input{
+	height: 70rpx;
+	border: 0;
+	border-bottom: 2px solid #E7E7E7;
+	width: 400rpx;
+	padding: 0 30rpx;
+	font-size: 28rpx;
+}
+.main-bottom{
+	padding: 0 30rpx;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.b-top{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 34rpx;
+}
+.b-top image{
+	width: 34rpx;
+	height: 25rpx;
+	margin-right: 10rpx;
+}
+.b-text{
+	font-size: 24rpx;
+	color: #7E7E7E;
+}
+.b-bott{
+	font-size: 27rpx;
+	color: #FFFFFF;
+	width: 216rpx;
+	height: 55rpx;
+	border-radius: 10rpx;
+	background: #008A05;
+	text-align: center;
+	line-height: 55rpx;
+}
+
+</style>

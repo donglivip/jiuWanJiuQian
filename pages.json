@@ -1,0 +1,219 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页"
+			}
+		}
+        ,{
+            "path" : "pages/wode/wode",
+            "style" : {
+				"navigationBarTitleText": "我的",
+				"navigationBarBackgroundColor": "#000000",
+				"navigationBarTextStyle": "#ffffff"
+			}
+        }
+        ,{
+            "path" : "pages/sousuo/sousuo",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/shaixuan/shaixuan",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/qiugouxiangqing/qiugouxiangqing",
+            "style" : {
+				"navigationBarTitleText": "求购单"
+			}
+        }
+        ,{
+            "path" : "pages/qiugouxiangqing2/qiugouxiangqing2",
+            "style" : {
+				"navigationBarTitleText": "求购单"
+			}
+        }
+        ,{
+            "path" : "pages/baojiabiao/baojiabiao", //报价单  报价表
+            "style" : {
+				"navigationBarTitleText": "报价单"
+			}
+        }
+        ,{
+            "path" : "pages/biaojiachenggong/biaojiachenggong",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/shouhuodizhi/shouhuodizhi",  
+            "style" : {
+				"navigationBarTitleText": "收货地址"
+			}
+        }
+        ,{
+            "path" : "pages/purchase-classification/purchase-classification",//发布求购--分类
+            "style" : {
+				"navigationBarTitleText": "分类"
+			}
+        }
+        ,{
+            "path" : "pages/additional-items/additional-items",//发布求购--添加物品
+            "style" : {
+				"navigationBarTitleText": "发布求购"
+			}
+        }
+        ,{
+            "path" : "pages/my-purchase/my-purchase",//我的求购单
+            "style" : {
+				"navigationBarTitleText": "我的求购单"
+			}
+        }
+        ,{
+            "path" : "pages/release-notice/release-notice",//发布中标通知
+            "style" : {
+				"navigationBarTitleText": "发布中标通知"
+			}
+        }
+        ,{
+            "path" : "pages/purchase-details/purchase-details",//求购单详情
+            "style" : {
+				"navigationBarTitleText": "求购单详情"
+			}
+        }
+        ,{
+            "path" : "pages/my-wallet/my-wallet",//我的钱包
+            "style" : {
+				"navigationBarTitleText": "我的钱包",
+				"navigationBarBackgroundColor": "#000000"  ,
+				"navigationBarTextStyle": "#ffffff",
+				"enablePullDownRefresh":true
+			}
+        }
+        ,{
+            "path" : "pages/cash-withdrawal/cash-withdrawal",//提现
+            "style" : {
+				"navigationBarTitleText": "提现"
+			}
+        }
+        ,{
+            "path" : "pages/my-certification/my-certification",//我的认证
+            "style" : {
+				"navigationBarTitleText": "我的认证"
+			}
+        }
+        ,{
+            "path" : "pages/enterprise-certification/enterprise-certification",//企业认证
+            "style" : {
+				"navigationBarTitleText": "企业认证"
+			}
+        }
+        ,{
+            "path" : "pages/personal-certification/personal-certification",//个人认证
+            "style" : {
+				"navigationBarTitleText": "个人认证"
+			}
+        }	
+        ,{
+            "path" : "pages/businessmen-stationed/businessmen-stationed",//商家入驻-正在审核
+            "style" : {
+				"navigationBarTitleText": "商家入驻"
+			}
+        }
+        ,{
+            "path" : "pages/my-quotation/my-quotation",//我的报价单
+            "style" : {
+				"navigationBarTitleText": "我的报价单"
+			}
+        }
+        ,{
+            "path" : "pages/modify-address/modify-address",//修改地址
+            "style" : {
+				"navigationBarTitleText": "修改地址"
+			}
+        }
+        ,{
+            "path" : "pages/add-address/add-address",//添加地址
+            "style" : {
+				"navigationBarTitleText": "添加地址"
+			}
+        }
+        ,{
+            "path" : "pages/merchants-whosell/merchants-whosell",//商家入驻
+            "style" : {
+				"navigationBarTitleText": "商家入驻"
+			}
+        }
+        ,{
+            "path" : "pages/vip/vip",   //会员
+           "style" : {
+           	"navigationBarTitleText": "会员",
+           	"navigationBarBackgroundColor": "#000000",
+           	"navigationBarTextStyle": "#ffffff"
+           }
+        }
+        ,{
+            "path" : "pages/changeAdress/changeAdress",//修改地址
+            "style" : {
+				"navigationBarTitleText": "修改地址"
+			}
+        }
+        ,{
+            "path" : "pages/VerificationPhone/VerificationPhone",  //我的认证验证手机号
+            "style" : {
+				"navigationBarTitleText": "验证手机号"
+			}
+        }
+        ,{
+            "path" : "pages/openshop/openshop",  //0元开店引导
+            "style" : {
+				"navigationBarTitleText": "0元开店"
+			}
+        }
+        ,{
+            "path" : "pages/merchantsNext/merchantsNext", //商家入驻店铺信息
+            "style" : {
+				"navigationBarTitleText": "店铺信息"
+			}
+        }
+        ,{
+            "path" : "pages/share/share", //转发赚钱
+            "style" : {
+				"navigationBarTitleText": "转发赚钱"
+			}
+        }
+        ,{
+            "path" : "pages/dividend/dividend",  //红利
+            "style" : {
+				"navigationBarTitleText": "我的红利"
+			}
+        }
+    ],
+	"tabBar": {
+		"color": "#333333",
+		"selectedColor": "#008A05",
+		"backgroundColor": "#FFFFFF",
+		"borderStyle": "black",
+		"list": [{
+			"pagePath": "pages/index/index",
+			"iconPath": "static/zhao.png",
+			"selectedIconPath": "static/lvzhao.png",
+			"text": "找商机"
+		}, {
+			"pagePath": "pages/additional-items/additional-items",
+			"iconPath": "static/jia.png",
+			"selectedIconPath": "static/lvjia.png",
+			"text": "发布求购"
+		}, {
+			"pagePath": "pages/wode/wode",
+			"iconPath": "static/xiao.png",
+			"selectedIconPath": "static/lvxiao.png",
+			"text": "我的"
+		}]
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "久万久千",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#F9F9F9"
+	}
+}

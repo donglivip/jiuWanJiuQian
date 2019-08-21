@@ -1,0 +1,480 @@
+<template>
+	<view class="wrapper">
+		<view class="main">
+			<view class="header">
+				<view class="header-z">
+					<view class="header-text">全部</view>
+					<image src="../../static/sanjiao.png" mode=""></image>
+				</view>
+				<view class="header-left">
+					<image src="../../static/sousuo.png" mode=""></image>
+					<input type="text" value="" placeholder="请输入求购信息关键字" placeholder-class="sou"/>
+				</view>
+				<view class="header-right">搜索</view>
+			</view>
+			<scroll-view class="main-box" scroll-y="" @tap="opennew('purchase-details')">
+				<view class="main-three">
+					<view class="three-top">
+						<view class="t-text">求购单编号:2019071085478R</view>
+						<view class="t-news">接受报价中</view>
+					</view>
+					<view class="three-box">
+						<view class="three-left">
+							<image src="../../static/tu.png" mode=""></image>
+						</view>
+						<view class="three-content">
+							<view class="c-top">
+								<view class="c-text">求购汽车轮胎内胎</view>
+								<image src="../../static/qiye.png" mode=""></image>
+							</view>
+							<view class="c-bottom">
+								<image src="../../static/shijian.png" mode=""></image>
+								<view class="c-zi">截止日期：2019-11-11</view>
+							</view>
+							<view class="c-cont">
+								<view class="c-red">轮胎</view>
+								<view class="c-yellow">轮胎</view>
+								<view class="c-green">1000个</view>
+							</view>
+						</view>
+						<view class="three-right">
+							<view class="r-top">12家已报价</view>
+						</view>
+					</view>
+					<view class="b-b">
+						<view class="three-text">流标</view>
+						<view class="three-word" @tap.stop="opennew('release-notice')">发布中标通知</view>
+					</view>
+				</view>
+				<view class="main-three">
+					<view class="three-top">
+						<view class="t-text">求购单编号:2019071085478R</view>
+						<view class="t-news t-zi">审核中</view>
+					</view>
+					<view class="three-box">
+						<view class="three-left">
+							<image src="../../static/tu.png" mode=""></image>
+						</view>
+						<view class="three-content">
+							<view class="c-top">
+								<view class="c-text">求购汽车轮胎内胎</view>
+								<image src="../../static/qiye.png" mode=""></image>
+							</view>
+							<view class="c-bottom">
+								<image src="../../static/shijian.png" mode=""></image>
+								<view class="c-zi">截止日期：2019-11-11</view>
+							</view>
+							<view class="c-cont">
+								<view class="c-red">轮胎</view>
+								<view class="c-yellow">轮胎</view>
+								<view class="c-green">1000个</view>
+							</view>
+						</view>
+						<view class="three-right">
+							<view class="r-top">0家已报价</view>
+						</view>
+					</view>
+				</view>
+				<view class="main-three">
+					<view class="three-top">
+						<view class="t-text">求购单编号:2019071085478R</view>
+						<view class="t-news t-zi">未通过审核</view>
+					</view>
+					<view class="three-box">
+						<view class="three-left">
+							<image src="../../static/tu.png" mode=""></image>
+						</view>
+						<view class="three-content">
+							<view class="c-top">
+								<view class="c-text">求购汽车轮胎内胎</view>
+								<image src="../../static/qiye.png" mode=""></image>
+							</view>
+							<view class="c-bottom">
+								<image src="../../static/shijian.png" mode=""></image>
+								<view class="c-zi">截止日期：2019-11-11</view>
+							</view>
+							<view class="c-cont">
+								<view class="c-red">轮胎</view>
+								<view class="c-yellow">轮胎</view>
+								<view class="c-green">1000个</view>
+							</view>
+						</view>
+						<view class="three-right">
+							<view class="r-top">0家已报价</view>
+						</view>
+					</view>
+					<view class="b-b">
+						<view class="three-word" @tap.stop="opennew02('additional-items')">修改求购单</view>
+					</view>
+				</view>
+				<view class="main-three">
+					<view class="three-top">
+						<view class="t-text">求购单编号:2019071085478R</view>
+						<view class="t-news t-word">已到期</view>
+					</view>
+					<view class="three-box">
+						<view class="three-left">
+							<image src="../../static/tu.png" mode=""></image>
+						</view>
+						<view class="three-content">
+							<view class="c-top">
+								<view class="c-text">求购汽车轮胎内胎</view>
+								<image src="../../static/qiye.png" mode=""></image>
+							</view>
+							<view class="c-bottom">
+								<image src="../../static/shijian.png" mode=""></image>
+								<view class="c-zi">截止日期：2019-11-11</view>
+							</view>
+							<view class="c-cont">
+								<view class="c-red">轮胎</view>
+								<view class="c-yellow">轮胎</view>
+								<view class="c-green">1000个</view>
+							</view>
+						</view>
+						<view class="three-right">
+							<view class="r-top">12家已报价</view>
+						</view>
+					</view>
+					<view class="b-b">
+						<view class="three-text">流标</view>
+						<view class="three-word">发布中标通知</view>
+					</view>
+				</view>
+				<view class="main-three">
+					<view class="three-top">
+						<view class="t-text">求购单编号:2019071085478R</view>
+						<view class="t-news t-word">已流标</view>
+					</view>
+					<view class="three-box">
+						<view class="three-left">
+							<image src="../../static/tu.png" mode=""></image>
+						</view>
+						<view class="three-content">
+							<view class="c-top">
+								<view class="c-text">求购汽车轮胎内胎</view>
+								<image src="../../static/qiye.png" mode=""></image>
+							</view>
+							<view class="c-bottom">
+								<image src="../../static/shijian.png" mode=""></image>
+								<view class="c-zi">截止日期：2019-11-11</view>
+							</view>
+							<view class="c-cont">
+								<view class="c-red">轮胎</view>
+								<view class="c-yellow">轮胎</view>
+								<view class="c-green">1000个</view>
+							</view>
+						</view>
+						<view class="three-right">
+							<view class="r-top">12家已报价</view>
+						</view>
+					</view>
+				</view>
+				<view class="main-three">
+					<view class="three-top">
+						<view class="t-text">求购单编号:2019071085478R</view>
+						<view class="t-news">已中标</view>
+					</view>
+					<view class="three-box">
+						<view class="three-left">
+							<image src="../../static/tu.png" mode=""></image>
+						</view>
+						<view class="three-content">
+							<view class="c-top">
+								<view class="c-text">求购汽车轮胎内胎</view>
+								<image src="../../static/qiye.png" mode=""></image>
+							</view>
+							<view class="c-bottom">
+								<image src="../../static/shijian.png" mode=""></image>
+								<view class="c-zi">截止日期：2019-11-11</view>
+							</view>
+							<view class="c-cont">
+								<view class="c-red">轮胎</view>
+								<view class="c-yellow">轮胎</view>
+								<view class="c-green">1000个</view>
+							</view>
+						</view>
+						<view class="three-right">
+							<view class="r-top">12家已报价</view>
+						</view>
+					</view>
+					<view class="three-bott">
+						<view class="bott-top">
+							<view class="bott-l">中标企业：</view>
+							<view class="bott-r">
+								<view class="b-x">江苏我的家网络科技有限公司</view>
+								<view class="b-x">江苏我的家网络科技有限公司</view>	
+								<view class="b-x">江苏我的家网络科技有限公司</view>
+							</view>
+						</view>
+						<view class="b-b">
+							<view class="three-text">流标</view>
+							<view class="three-word">查看报价</view>
+						</view>
+					</view>
+				</view>
+			</scroll-view>
+		</view>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				
+			}
+		},
+		methods: {
+			opennew:function(id){
+				uni.navigateTo({
+					url: '../'+id+'/'+id
+				});
+				
+			},
+			opennew02:function(id){
+				uni.switchTab({
+					url: '../'+id+'/'+id
+				});
+				
+			}
+		}
+	}
+</script>
+
+<style>
+.wrapper,uni-page-body, uni-page-refresh,page{
+		background: #F9F9F9;height: 100%;overflow: hidden;
+	}
+.main{
+	height: 100%;
+}
+.header{
+	height: 100rpx;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 0 30rpx;
+	background: #FFFFFF;
+	margin-bottom: 30rpx;
+}
+.header-z{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 110rpx;
+	margin-right: 30rpx;
+}
+.header-z image{
+	width: 35rpx;
+	height: 33rpx;
+}
+.header-text{
+	font-size: 30rpx;
+	color: #333333;
+}
+.header-left{
+	width: 460rpx;
+	height: 60rpx;
+	background: #F5F5F5;
+	border-radius: 6rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 24rpx;
+}
+.header-left image{
+	height: 28rpx;
+	width: 28rpx;
+	padding: 0 20rpx;
+}
+input{
+	width: 300rpx;
+	height: 56rpx;
+	border: 0;
+	font-size: 28rpx;
+	border-radius: 10rpx;
+}
+
+.header-right{
+	font-size: 28rpx;
+	color: #333333;
+}
+.main-box{
+	height: calc(100% - 100rpx);
+}
+.main-three{
+	background: #FFFFFF;
+	padding: 0 30rpx;
+	margin: 0 30rpx 30rpx 30rpx;
+}
+.three-top{
+	height: 86rpx;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid #E8E8E8;
+}
+.t-text{
+	font-size: 26rpx;
+	color: #666666;
+}
+.t-news{
+	font-size: 26rpx;
+	color: #008A05;
+}
+.t-zi{
+	color: #FF2626;
+}
+.t-word{
+	color: #666666;
+}
+.three-box{
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		height: 200rpx;
+	}
+	.three-left{
+		height: 140rpx;
+		width: 140rpx;
+		margin-right: 28rpx;
+	}
+	.three-left image{
+		width: 100%;
+		height: 100%;
+		border-radius: 12rpx;
+	}
+	.three-content{
+		width: 300rpx;
+		flex: 1;
+	}
+	.c-top{
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		margin-bottom: 10rpx;
+	}
+	.c-top image{
+		height: 30rpx;
+		width: 30rpx;
+	}
+	.c-text{
+		font-size: 36rpx;
+		color: #111111;
+		margin-right: 15rpx;
+	}
+	.c-cont{
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		margin-bottom: 10rpx;
+	}
+	.c-red{
+		font-size: 22rpx;
+		color: #F56C6C;
+		width: 96rpx;
+		height: 42rpx;
+		margin-right: 20rpx;
+		border-radius: 6rpx;
+		background: #FEF0F0;
+		text-align: center;
+		line-height: 42rpx;
+	}
+	.c-yellow{
+		font-size: 22rpx;
+		color: #E6A23C;
+		width: 96rpx;
+		height: 42rpx;
+		margin-right: 20rpx;
+		border-radius: 6rpx;
+		background: #FDF6EC;
+		text-align: center;
+		line-height: 42rpx;
+	}
+	.c-green{
+		font-size: 22rpx;
+		color: #67C23A;
+		width: 96rpx;
+		height: 42rpx;
+		margin-right: 20rpx;
+		border-radius: 6rpx;
+		background: #F0F9EB;
+		text-align: center;
+		line-height: 42rpx;
+	}
+	.c-bottom{
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		margin-bottom: 20rpx;
+	}
+	.c-bottom image{
+		height: 20rpx;
+		width: 20rpx;
+		margin-right: 20rpx;
+	}
+	.c-zi{
+		color: #666666;
+		font-size: 24rpx;
+	}
+	.three-right{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	.r-top{
+		color: #666666;
+		font-size: 26rpx;
+		word-break: break-all;
+		width: 78rpx;
+		text-align: right;
+		text-indent: 12rpx;
+	}
+	.bott-top{
+		height: 160rpx;
+		display: flex;
+		justify-content: flex-start;
+	}
+	.bott-l{
+		color: #666666;
+		font-size: 26rpx;
+	}
+	.bott-r{
+		
+	}
+	.b-x{
+		color: #666666;
+		font-size: 26rpx;
+		margin-bottom: 20rpx;
+	}
+	
+	.b-b{
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		height: 90rpx;
+	}
+	.three-text{
+		color: #666666;
+		font-size: 22rpx;
+		margin-left: 16rpx;
+		border: 1px solid #666666;
+		width: 174rpx;
+		height: 50rpx;
+		border-radius: 28rpx;
+		text-align: center;
+		line-height: 50rpx;
+	}
+	.three-word{
+		color: #FFFFFF;
+		font-size: 22rpx;
+		margin-left: 15rpx;
+		border-radius: 28rpx;
+		width: 174rpx;
+		height: 50rpx;
+		background: #008A05;
+		text-align: center;
+		line-height: 50rpx;
+	}
+</style>

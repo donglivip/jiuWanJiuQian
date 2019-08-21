@@ -1,0 +1,384 @@
+<template>
+	<view class="wrapper">
+		<view class="main">
+			<view class="main-one">
+				<view class="one-top">
+					<image src="../../static/baojia.png" mode=""></image>
+					<view class="one-text">报价成功</view>
+				</view>
+				<view class="one-bottom">
+					<view class="b-box">
+						<view class="l-top">
+							<image src="../../static/touxiang.png" mode=""></image>
+							<view class="l-text">李晓明</view>
+						</view>
+						<view class="b-bott" @tap="opennew02('index')">接着找商机</view>
+					</view>
+					<view class="b-box">
+						<view class="l-top">
+							<image src="../../static/baoxiang.png" mode=""></image>
+							<view class="l-text">15255550521</view>
+						</view>
+						<view class="b-bott b-zi">拨打电话</view>
+					</view>
+				</view>
+			</view>
+			<view class="main-box"  @tap="opennew('qiugouxiangqing2')">
+				<view class="main-three">
+					<view class="three-left">
+						<image src="../../static/tu.png" mode=""></image>
+					</view>
+					<view class="three-content">
+						<view class="c-top">
+							<view class="c-text">求购汽车轮胎内胎</view>
+							<image src="../../static/qiye.png" mode=""></image>
+						</view>
+						<view class="c-cont">
+							<view class="c-red">轮胎</view>
+							<view class="c-yellow">轮胎</view>
+							<view class="c-green">1000个</view>
+						</view>
+						<view class="c-bottom">
+							<image src="../../static/shijian.png" mode=""></image>
+							<view class="c-zi">截止日期：2019-11-11</view>
+						</view>
+					</view>
+					<view class="three-right">
+						<view class="r-top">立即报价</view>
+						<view class="r-bot">
+							<image src="../../static/dingwei.png" mode=""></image>
+							<view class="r-text">江苏·徐州</view>
+						</view>
+					</view>
+				</view>
+				<view class="main-three">
+					<view class="three-left">
+						<image src="../../static/tu.png" mode=""></image>
+					</view>
+					<view class="three-content">
+						<view class="c-top">
+							<view class="c-text">求购汽车轮胎内胎</view>
+							<image src="../../static/qiye.png" mode=""></image>
+						</view>
+						<view class="c-cont">
+							<view class="c-red">轮胎</view>
+							<view class="c-yellow">轮胎</view>
+							<view class="c-green">1000个</view>
+						</view>
+						<view class="c-bottom">
+							<image src="../../static/shijian.png" mode=""></image>
+							<view class="c-zi">截止日期：2019-11-11</view>
+						</view>
+					</view>
+					<view class="three-right">
+						<view class="r-top">立即报价</view>
+						<view class="r-bot">
+							<image src="../../static/dingwei.png" mode=""></image>
+							<view class="r-text">江苏·徐州</view>
+						</view>
+					</view>
+				</view>
+				<view class="main-three">
+					<view class="three-left">
+						<image src="../../static/tu.png" mode=""></image>
+					</view>
+					<view class="three-content">
+						<view class="c-top">
+							<view class="c-text">求购汽车轮胎内胎</view>
+							<image src="../../static/qiye.png" mode=""></image>
+						</view>
+						<view class="c-cont">
+							<view class="c-red">轮胎</view>
+							<view class="c-yellow">轮胎</view>
+							<view class="c-green">1000个</view>
+						</view>
+						<view class="c-bottom">
+							<image src="../../static/shijian.png" mode=""></image>
+							<view class="c-zi">截止日期：2019-11-11</view>
+						</view>
+					</view>
+					<view class="three-right">
+						<view class="r-top">立即报价</view>
+						<view class="r-bot">
+							<image src="../../static/dingwei.png" mode=""></image>
+							<view class="r-text">江苏·徐州</view>
+						</view>
+					</view>
+				</view>
+				<view class="main-three">
+					<view class="three-left">
+						<image src="../../static/tu.png" mode=""></image>
+					</view>
+					<view class="three-content">
+						<view class="c-top">
+							<view class="c-text">求购汽车轮胎内胎</view>
+							<image src="../../static/qiye.png" mode=""></image>
+						</view>
+						<view class="c-cont">
+							<view class="c-red">轮胎</view>
+							<view class="c-yellow">轮胎</view>
+							<view class="c-green">1000个</view>
+						</view>
+						<view class="c-bottom">
+							<image src="../../static/shijian.png" mode=""></image>
+							<view class="c-zi">截止日期：2019-11-11</view>
+						</view>
+					</view>
+					<view class="three-right">
+						<view class="r-top">立即报价</view>
+						<view class="r-bot">
+							<image src="../../static/dingwei.png" mode=""></image>
+							<view class="r-text">江苏·徐州</view>
+						</view>
+					</view>
+				</view>
+				<view class="main-three">
+					<view class="three-left">
+						<image src="../../static/tu.png" mode=""></image>
+					</view>
+					<view class="three-content">
+						<view class="c-top">
+							<view class="c-text">求购汽车轮胎内胎</view>
+							<image src="../../static/qiye.png" mode=""></image>
+						</view>
+						<view class="c-cont">
+							<view class="c-red">轮胎</view>
+							<view class="c-yellow">轮胎</view>
+							<view class="c-green">1000个</view>
+						</view>
+						<view class="c-bottom">
+							<image src="../../static/shijian.png" mode=""></image>
+							<view class="c-zi">截止日期：2019-11-11</view>
+						</view>
+					</view>
+					<view class="three-right">
+						<view class="r-top">立即报价</view>
+						<view class="r-bot">
+							<image src="../../static/dingwei.png" mode=""></image>
+							<view class="r-text">江苏·徐州</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				
+			}
+		},
+		methods: {
+			opennew:function(id){
+				uni.navigateTo({
+					url: '../'+id+'/'+id
+				});
+				
+			},
+			opennew02:function(id){
+				uni.switchTab({
+					url: '../'+id+'/'+id
+				});
+				
+			}
+		}
+	}
+</script>
+
+<style>
+.wrapper{
+	background: #F9F9F9;
+}
+.main-one{
+	height: 390rpx;
+	background: #FFFFFF;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 30rpx;
+}
+.one-top{
+	height: 140rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.one-top image{
+	width: 74rpx;
+	height: 86rpx;
+	margin-right: 20rpx;
+}
+.one-text{
+	font-size: 60rpx;
+	color: #008A05;
+}
+.one-bottom{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+.b-box{
+	width: 50%;
+	height: 250rpx;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.l-top{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 45rpx;
+}
+.l-top image{
+	width: 57rpx;
+	height: 57rpx;
+	margin-right: 20rpx;
+}
+.l-text{
+	font-size: 40rpx;
+	color: #333333;
+}
+.b-bott{
+	font-size: 28rpx;
+	color: #FFFFFF;
+	width: 222rpx;
+	height: 72rpx;
+	text-align: center;
+	line-height: 72rpx;
+	background: #E6A23C;
+}
+.b-zi{
+	background: #008A05;
+}
+.main-three{
+		height: 200rpx;
+		background: #FFFFFF;
+		padding: 0 20rpx;
+		margin-bottom: 20rpx;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+	}
+	.three-left{
+		height: 140rpx;
+		width: 140rpx;
+		margin-right: 28rpx;
+	}
+	.three-left image{
+		width: 100%;
+		height: 100%;
+		border-radius: 12rpx;
+	}
+	.three-content{
+		width: 340rpx;
+		flex: 1;
+	}
+	.c-top{
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		margin-bottom: 10rpx;
+	}
+	.c-top image{
+		height: 30rpx;
+		width: 30rpx;
+	}
+	.c-text{
+		font-size: 36rpx;
+		color: #111111;
+		margin-right: 15rpx;
+	}
+	.c-cont{
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		margin-bottom: 10rpx;
+	}
+	.c-red{
+		font-size: 22rpx;
+		color: #F56C6C;
+		width: 96rpx;
+		height: 42rpx;
+		margin-right: 20rpx;
+		border-radius: 6rpx;
+		background: #FEF0F0;
+		text-align: center;
+		line-height: 42rpx;
+	}
+	.c-yellow{
+		font-size: 22rpx;
+		color: #E6A23C;
+		width: 96rpx;
+		height: 42rpx;
+		margin-right: 20rpx;
+		border-radius: 6rpx;
+		background: #FDF6EC;
+		text-align: center;
+		line-height: 42rpx;
+	}
+	.c-green{
+		font-size: 22rpx;
+		color: #67C23A;
+		width: 96rpx;
+		height: 42rpx;
+		margin-right: 20rpx;
+		border-radius: 6rpx;
+		background: #F0F9EB;
+		text-align: center;
+		line-height: 42rpx;
+	}
+	.c-bottom{
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+	}
+	.c-bottom image{
+		height: 20rpx;
+		width: 20rpx;
+		margin-right: 20rpx;
+	}
+	.c-zi{
+		color: #666666;
+		font-size: 24rpx;
+	}
+	.three-right{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	.r-top{
+		color: #FFFFFF;
+		font-size: 22rpx;
+		background: #008A05;
+		border-radius: 26rpx;
+		width: 130rpx;
+		height: 50rpx;
+		text-align: center;
+		line-height: 50rpx;
+		margin-bottom: 20rpx;
+	}
+	.r-bot{
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+	}
+	.r-bot image{
+		height: 24rpx;
+		width: 20rpx;
+	}
+	.r-text{
+		color: #666666;
+		font-size: 24rpx;
+		margin-left: 15rpx;
+	}
+	
+
+</style>

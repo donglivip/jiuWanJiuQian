@@ -1,0 +1,155 @@
+
+.Equity image{
+		width: 90rpx;
+		height: 90rpx;
+		margin-bottom: 20rpx;
+}
+.Equity{
+		width: 25%;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+		font-size: 26rpx;
+		color: #323232;
+		margin: 30rpx 0;
+}
+.Equity-box{
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-flex-wrap: wrap;
+		    -ms-flex-wrap: wrap;
+		        flex-wrap: wrap;
+		margin: 25rpx 25rpx 0;
+}
+.title{
+		font-size: 36rpx;
+		font-weight: bold;
+		text-align: center;
+		margin: 30rpx 0 0;
+}
+.uni-bg-green .vip-one-right{
+		color: #EDD4B0;
+}
+.vip-three{
+		color: #8B572A;
+		font-size: 26rpx;
+		margin: 35rpx 35rpx 0;
+}
+.vip-two{
+		text-align: right;
+		color: #D90000;
+		font-size: 24rpx;
+		margin: 0 35rpx;
+}
+.vip-two text{
+		font-size: 40rpx;
+		margin: 0 2rpx;
+}
+.vip-one{
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: justify;
+		-webkit-justify-content: space-between;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
+		margin: 50rpx 35rpx 0;
+}
+.vip-one-right{
+		width: 223rpx;
+		height: 68rpx;
+		text-align: center;
+		line-height: 68rpx;
+		background: url(https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/btn-back.png) no-repeat;
+		background-size:100% 100% ;
+		font-weight: 500;
+		font-size: 34rpx;
+}
+.vip-time{
+		font-size: 28rpx;
+		color: #333333;
+}
+.vip-title{
+		font-size: 36rpx;
+		font-weight: bold;
+		color: #2D2B31;
+		margin-bottom: 30rpx;
+}
+.vip-one{
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+}
+.uni-bg-red .vip-title{
+		color: #E7CB90;
+}
+.uni-bg-red .vip-three,.uni-bg-red .vip-time{
+		color: #FFFFFF;
+}
+.uni-bg-red .vip-two{
+		color: #F3EBE0;
+}
+.uni-bg-red .vip-one-right{
+		color: #3D2F24;
+		background: url(https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/btn-back01.png) no-repeat;
+		background-size:100% 100% ;
+}
+.swiper{
+		width: 100%;
+		margin: 0 auto;
+}
+.swiper-item{
+		width: 100%;
+		height: 346rpx;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+}
+.uni-bg-red{
+		background: url(https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/vip-back01.png) no-repeat;
+		background-size: 102% 102%;
+		background-position: center;
+}
+.uni-bg-green{
+		background-size: 102% 102%;
+		background-position: center;
+}
+.headback {
+	background: #000000;
+	position: fixed;
+	top: 0;
+	left: -10%;
+	width: 120%;
+	height: 266rpx;
+	border-bottom-left-radius: 45%;
+	border-bottom-right-radius: 45%;
+}
+

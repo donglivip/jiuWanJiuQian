@@ -1,0 +1,208 @@
+<template>
+	<view class="wrapper">
+		<view class="main">
+			<view class="main-box">
+				<view class="main-top">
+					<view class="m-top">
+						<image src="../../static/dingwei.png" mode=""></image>
+						<view class="m-text">李晓明</view>
+					</view>
+					<view class="m-bott">15252240522</view>
+				</view>
+				<view class="main-content">江苏省徐州市云龙区绿地世纪城江苏省徐州市云龙区绿地世纪城江苏省徐州市云龙区绿地世纪城</view>
+				<view class="main-bottom">
+					<view class="m-left">
+						<image src="../../static/xuan.png" mode=""></image>
+						<view class="m-news">默认地址</view>
+					</view>
+					<view class="m-right">
+						<view class="right-box">
+							<image src="../../static/bianji.png" mode=""></image>
+							<view class="m-zi">编辑</view>
+						</view>
+						<view class="right-box">
+							<image src="../../static/shanchu.png" mode=""></image>
+							<view class="m-zi">删除</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="main-box">
+				<view class="main-top">
+					<view class="m-top">
+						<image src="../../static/dingwei.png" mode=""></image>
+						<view class="m-text">李晓明</view>
+					</view>
+					<view class="m-bott">15252240522</view>
+				</view>
+				<view class="main-content">江苏省徐州市云龙区绿地世纪城江苏省徐州市云龙区绿地世纪城江苏省徐州市云龙区绿地世纪城</view>
+				<view class="main-bottom">
+					<view class="m-left">
+						<image src="../../static/weixuan.png" mode=""></image>
+						<view class="m-news">默认地址</view>
+					</view>
+					<view class="m-right">
+						<view class="right-box">
+							<image src="../../static/bianji.png" mode=""></image>
+							<view class="m-zi">编辑</view>
+						</view>
+						<view class="right-box">
+							<image src="../../static/shanchu.png" mode=""></image>
+							<view class="m-zi">删除</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="main-box">
+				<view class="main-top">
+					<view class="m-top">
+						<image src="../../static/dingwei.png" mode=""></image>
+						<view class="m-text">李晓明</view>
+					</view>
+					<view class="m-bott">15252240522</view>
+				</view>
+				<view class="main-content">江苏省徐州市云龙区绿地世纪城江苏省徐州市云龙区绿地世纪城江苏省徐州市云龙区绿地世纪城</view>
+				<view class="main-bottom">
+					<view class="m-left">
+						<image src="../../static/weixuan.png" mode=""></image>
+						<view class="m-news">默认地址</view>
+					</view>
+					<view class="m-right">
+						<view class="right-box">
+							<image src="../../static/bianji.png" mode=""></image>
+							<view class="m-zi">编辑</view>
+						</view>
+						<view class="right-box">
+							<image src="../../static/shanchu.png" mode=""></image>
+							<view class="m-zi">删除</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="bottom">
+			<image src="../../static/baijia.png" mode=""></image>
+			<view class="bottom-text">添加地址</view>
+		</view>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				
+			}
+		},
+		methods: {
+			
+		}
+	}
+</script>
+
+<style>
+.wrapper,uni-page-body, uni-page-refresh,page{
+		background: #F9F9F9;height: 100%;overflow: hidden;
+	}
+.main{
+	height: calc(100% - 100rpx);
+}
+.main-box{
+	height: 260rpx;
+	background: #FFFFFF;
+	padding: 0 30rpx;
+	margin-bottom: 30rpx;
+}
+.main-top{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 90rpx;
+}
+.m-top{
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+.m-top image{
+	height: 34rpx;
+	width: 27rpx;
+	margin-right: 16rpx;
+}
+.m-text{
+	font-size: 30rpx;
+	color: #333333;
+}
+.m-bott{
+	font-size: 30rpx;
+	color: #333333;
+}
+.main-content{
+	font-size: 28rpx;
+	color: #666666;
+	word-break: break-all;
+	height: 60rpx;
+	line-height: 30rpx;
+	padding-bottom: 30rpx;
+	border-bottom: 1px solid #E8E8E8;
+}
+.main-bottom{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 80rpx;
+}
+.m-left{
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+.m-left image{
+	width: 34rpx;
+	height: 34rpx;
+	margin-right: 10rpx;
+}
+.m-news{
+	font-size: 28rpx;
+	color: #333333;
+}
+.m-right{
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+.right-box{
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	width: 110rpx;
+	margin-left: 20rpx;
+}
+.right-box image{
+	width: 30rpx;
+	height: 30rpx;
+	margin-right: 10rpx;
+}
+.m-zi{
+	font-size: 28rpx;
+	color: #999999;
+}
+.bottom{
+	height: 100rpx;
+	background: #000000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.bottom image{
+	width: 42rpx;
+	height: 42rpx;
+	margin-right: 20rpx;
+}
+.bottom-text{
+	font-size: 36rpx;
+	color: #FFFFFF;
+}
+
+
+</style>

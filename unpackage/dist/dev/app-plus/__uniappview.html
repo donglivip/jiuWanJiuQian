@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+    <head>
+        <meta charset="UTF-8" />
+        <script>
+            var coverSupport = 'CSS' in window && typeof CSS.supports === 'function' && (CSS.supports('top: env(a)') ||
+                CSS.supports('top: constant(a)'))
+            document.write(
+                '<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' +
+                (coverSupport ? ', viewport-fit=cover' : '') + '" />')
+        </script>
+        <title>View</title>
+        <style>
+            * {
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            input[type="search"i]::-webkit-search-cancel-button {
+                display: none;
+            }
+        </style>
+        <script>
+            var __wxConfig = {"debug":false,"appname":"久万久千","entryPagePath":"pages/index/index.html","page":{"pages/index/index.html":{"window":{"navigationBarTitleText":"首页","usingComponents":{}}},"pages/wode/wode.html":{"window":{"navigationBarTitleText":"我的","navigationBarBackgroundColor":"#000000","navigationBarTextStyle":"white","usingComponents":{}}},"pages/sousuo/sousuo.html":{"window":{"usingComponents":{}}},"pages/shaixuan/shaixuan.html":{"window":{"usingComponents":{}}},"pages/qiugouxiangqing/qiugouxiangqing.html":{"window":{"navigationBarTitleText":"求购单","usingComponents":{}}},"pages/qiugouxiangqing2/qiugouxiangqing2.html":{"window":{"navigationBarTitleText":"求购单","usingComponents":{}}},"pages/baojiabiao/baojiabiao.html":{"window":{"navigationBarTitleText":"报价单","usingComponents":{}}},"pages/biaojiachenggong/biaojiachenggong.html":{"window":{"usingComponents":{}}},"pages/shouhuodizhi/shouhuodizhi.html":{"window":{"navigationBarTitleText":"收货地址","usingComponents":{}}},"pages/purchase-classification/purchase-classification.html":{"window":{"navigationBarTitleText":"分类","usingComponents":{}}},"pages/additional-items/additional-items.html":{"window":{"navigationBarTitleText":"发布求购","usingComponents":{}}},"pages/my-purchase/my-purchase.html":{"window":{"navigationBarTitleText":"我的求购单","usingComponents":{}}},"pages/release-notice/release-notice.html":{"window":{"navigationBarTitleText":"发布中标通知","usingComponents":{}}},"pages/purchase-details/purchase-details.html":{"window":{"navigationBarTitleText":"求购单详情","usingComponents":{}}},"pages/my-wallet/my-wallet.html":{"window":{"navigationBarTitleText":"我的钱包","navigationBarBackgroundColor":"#000000","navigationBarTextStyle":"white","enablePullDownRefresh":true,"usingComponents":{}}},"pages/cash-withdrawal/cash-withdrawal.html":{"window":{"navigationBarTitleText":"提现","usingComponents":{}}},"pages/my-certification/my-certification.html":{"window":{"navigationBarTitleText":"我的认证","usingComponents":{}}},"pages/enterprise-certification/enterprise-certification.html":{"window":{"navigationBarTitleText":"企业认证","usingComponents":{}}},"pages/personal-certification/personal-certification.html":{"window":{"navigationBarTitleText":"个人认证","usingComponents":{}}},"pages/businessmen-stationed/businessmen-stationed.html":{"window":{"navigationBarTitleText":"商家入驻","usingComponents":{}}},"pages/my-quotation/my-quotation.html":{"window":{"navigationBarTitleText":"我的报价单","usingComponents":{}}},"pages/modify-address/modify-address.html":{"window":{"navigationBarTitleText":"修改地址","usingComponents":{}}},"pages/add-address/add-address.html":{"window":{"navigationBarTitleText":"添加地址","usingComponents":{"mpvue-city-picker":"/components/mpvue-citypicker/mpvueCityPicker"}}},"pages/merchants-whosell/merchants-whosell.html":{"window":{"navigationBarTitleText":"商家入驻","usingComponents":{}}},"pages/vip/vip.html":{"window":{"navigationBarTitleText":"会员","navigationBarBackgroundColor":"#000000","navigationBarTextStyle":"white","usingComponents":{}}},"pages/changeAdress/changeAdress.html":{"window":{"navigationBarTitleText":"修改地址","usingComponents":{"mpvue-city-picker":"/components/mpvue-citypicker/mpvueCityPicker"}}},"pages/VerificationPhone/VerificationPhone.html":{"window":{"navigationBarTitleText":"验证手机号","usingComponents":{}}},"pages/openshop/openshop.html":{"window":{"navigationBarTitleText":"0元开店","usingComponents":{}}},"pages/merchantsNext/merchantsNext.html":{"window":{"navigationBarTitleText":"店铺信息","usingComponents":{}}},"pages/share/share.html":{"window":{"navigationBarTitleText":"转发赚钱","usingComponents":{}}},"pages/dividend/dividend.html":{"window":{"navigationBarTitleText":"我的红利","usingComponents":{}}}},"global":{"window":{"navigationBarTextStyle":"black","navigationBarTitleText":"久万久千","navigationBarBackgroundColor":"#FFFFFF","backgroundColor":"#F9F9F9"}},"tabBar":{"color":"#333333","selectedColor":"#008A05","backgroundColor":"#FFFFFF","borderStyle":"black","list":[{"pagePath":"pages/index/index.html","iconPath":"static/zhao.png","selectedIconPath":"static/lvzhao.png","text":"找商机"},{"pagePath":"pages/additional-items/additional-items.html","iconPath":"static/jia.png","selectedIconPath":"static/lvjia.png","text":"发布求购"},{"pagePath":"pages/wode/wode.html","iconPath":"static/xiao.png","selectedIconPath":"static/lvxiao.png","text":"我的"}],"position":"bottom"},"networkTimeout":{"request":60000,"connectSocket":60000,"uploadFile":60000,"downloadFile":60000},"platform":"devtools","pages":["pages/index/index","pages/wode/wode","pages/sousuo/sousuo","pages/shaixuan/shaixuan","pages/qiugouxiangqing/qiugouxiangqing","pages/qiugouxiangqing2/qiugouxiangqing2","pages/baojiabiao/baojiabiao","pages/biaojiachenggong/biaojiachenggong","pages/shouhuodizhi/shouhuodizhi","pages/purchase-classification/purchase-classification","pages/additional-items/additional-items","pages/my-purchase/my-purchase","pages/release-notice/release-notice","pages/purchase-details/purchase-details","pages/my-wallet/my-wallet","pages/cash-withdrawal/cash-withdrawal","pages/my-certification/my-certification","pages/enterprise-certification/enterprise-certification","pages/personal-certification/personal-certification","pages/businessmen-stationed/businessmen-stationed","pages/my-quotation/my-quotation","pages/modify-address/modify-address","pages/add-address/add-address","pages/merchants-whosell/merchants-whosell","pages/vip/vip","pages/changeAdress/changeAdress","pages/VerificationPhone/VerificationPhone","pages/openshop/openshop","pages/merchantsNext/merchantsNext","pages/share/share","pages/dividend/dividend"],"nvueCompiler":"weex","renderer":"auto","splashscreen":{"alwaysShowBeforeRender":false,"autoclose":true},"compilerVersion":"2.2.2","usingComponents":{}}
+        </script>
+        <script>
+            var __id__ = '';
+            window.__dispatchGenerateFunc__ = function(page) {
+                __id__ = page;
+                document.title = page;
+                // window.history.pushState('', '', page);
+                var wxss = page.replace('.html', '.wxss')
+                if (
+                    typeof __wxAppCode__ !== 'undefined' &&
+                    __wxAppCode__.hasOwnProperty(wxss)
+                ) {
+                    var setCssToHead = __wxAppCode__[wxss]
+                    typeof setCssToHead === 'function' && setCssToHead()
+                    document.dispatchEvent(new CustomEvent("generateFuncReady", {
+                        detail: {
+                            generateFunc: $gwx(page.replace('.html', '.wxml'))
+                        }
+                    }));
+                } else {
+                    plus.webview.currentWebview().setJsFile('_www/' + page.replace('.html', '.js'));
+                }
+            };
+        </script>
+        <script src="__uniappes6.js"></script>
+        <script src="uniapp://ready"></script>
+    </head>
+
+    <body>
+        <div></div>
+    </body>
+
+</html>
