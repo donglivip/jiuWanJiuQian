@@ -8,7 +8,12 @@
 			<swiper-item><text class="font">用户158****5214已分享9人加入会员，获得900元奖金</text></swiper-item>
 			<swiper-item><text class="font">用户158****5214已分享9人加入会员，获得900元奖金</text></swiper-item>
 		</swiper>
-		<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/share02.png" mode="" class="shareimg02" @tap="share()"></image>
+		<!-- #ifdef APP-PLUS -->
+			<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/share02.png" mode="" class="shareimg02" @tap="bottomchange()"></image>
+		<!-- #endif -->
+		<!-- #ifdef MP-WEIXIN -->
+			<button open-type="share" plain='true'><image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/share02.png" mode="" class="shareimg02"></image></button>
+		<!-- #endif -->
 		<!-- 分享进度 -->
 		<view class="share03">
 			<view class="share03-top">
@@ -61,7 +66,18 @@
 			</div>
 		</view>
 		<!-- 一键转发 -->
-		<div class="btn center" @tap="share()">一键转发领奖励</div>
+		<!-- #ifdef APP-PLUS -->
+			<view class="btn center" @tap="bottomchange()">一键转发领奖励</view>
+		<!-- #endif -->
+		<!-- #ifdef MP-WEIXIN -->
+			<button class="btn center" open-type='share' plain='true'>一键转发领奖励</button>
+		<!-- #endif -->
+		<view class="botom-view" v-show="bottomshow" @tap="bottomchange">
+			<view class="bottom-inner center">
+				<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/weixin.png" mode="" @tap.stop="share()"></image>
+				<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/Circle%20.png" mode="" @tap.stop="wxsen()"></image>
+			</view>
+		</view>
 	</scroll-view>
 </template>
 
@@ -73,13 +89,18 @@ export default {
 			Percentage02: 0.4,
 			imageURL: 'https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/shareback.jpg',
 			imageURL02: 'https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/share04back.png',
-			mydata:{}
+			mydata:{},
+			bottomshow:false
 		};
 	},
 	onLoad:function(){
 		this.myajax()
 	},
 	methods: {
+		// 分享框的显示
+		bottomchange:function(){
+			this.bottomshow=!this.bottomshow
+		},
 		// 初始化数据
 		myajax:function(){
 			var that=this
@@ -108,11 +129,29 @@ export default {
 				type: 1,
 				summary: '我正在久万久千',
 				success: function(res) {
-					console.log('success:' + JSON.stringify(res));
+					uni.showToast({
+						title:'分享成功'
+					})
 				},
 				fail: function(err) {
 					console.log('fail:' + JSON.stringify(err));
 				}
+			});
+		},
+		wxsen:function(){
+			uni.share({
+			    provider: "weixin",
+			    scene: "WXSenceTimeline",
+			    type: 1,
+			    summary: "我正在久万久千",
+			    success: function (res) {
+			       uni.showToast({
+			       	title:'分享成功'
+			       })
+			    },
+			    fail: function (err) {
+			        console.log("fail:" + JSON.stringify(err));
+			    }
 			});
 		}
 	},
@@ -130,6 +169,29 @@ export default {
 </script>
 
 <style>
+	button{
+		border: 0!important;
+		border-radius:0 ;
+	}
+	.bottom-inner image{
+		width: 100rpx;
+		height: 100rpx;
+	}
+	.bottom-inner{
+		width: 100%;
+		height: 250rpx;
+		background: #FFFFFF;
+		justify-content: space-around;
+	}
+	.botom-view{
+		position: fixed;
+		bottom: 0;left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,.6);
+		display: flex;
+		align-items: flex-end;
+	}
 	.cred{
 		color: #FF0000;
 		font-size: 30rpx;

@@ -14,7 +14,7 @@
 				<view class="c-text">点击登录</view>
 				<view class="c-news"></view>
 			</view>
-			<view class="header-right" @tap="opennew('openshop')">
+			<view class="header-right" @tap="useropen('openshop')">
 				<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/logo.png" mode=""></image>
 				<view class="h-text">0元开店</view>
 			</view>
@@ -23,14 +23,14 @@
 			<view class="main-one">
 				<view class="one-top">采购管理</view>
 				<view class="one-content">
-					<view class="c-box" @tap="opennew('my-purchase')">
+					<view class="c-box" @tap="useropen('my-purchase')">
 						<view class="box-top">
 							<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/qiugoudan.png" mode=""></image>
 							<view class="box-text">42</view>
 						</view>
 						<view class="box-bottom">我的求购单</view>
 					</view>
-					<view class="c-box" @tap="opennew('my-quotation')">
+					<view class="c-box" @tap="useropen('my-quotation')">
 						<view class="box-top">
 							<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/baojiabiao.png" mode=""></image>
 							<view class="box-text">42</view>
@@ -46,12 +46,12 @@
 			</view>
 			<view class="main-two" @tap="opennew('share')"><image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/jiaonang.jpg" mode=""></image></view>
 			<view class="main-three">
-				<view class="three-box" @tap="opennew('my-wallet')">
+				<view class="three-box" @tap="useropen('my-wallet')">
 					<view class="t-left"><image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/qianbao.png" mode=""></image></view>
 					<view class="t-cont">我的钱包</view>
 					<view class="t-right"><image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/you2.png" mode=""></image></view>
 				</view>
-				<view class="three-box" @tap="opennew('dividend')">
+				<view class="three-box" @tap="useropen('dividend')">
 					<view class="t-left"><image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/hongli.png" mode=""></image></view>
 					<view class="t-cont">我的红利</view>
 					<view class="t-right">
@@ -59,12 +59,12 @@
 						<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/you2.png" mode=""></image>
 					</view>
 				</view>
-				<view class="three-box" @tap="opennew('my-certification')">
+				<view class="three-box" @tap="useropen('my-certification')">
 					<view class="t-left"><image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/renzheng.png" mode=""></image></view>
 					<view class="t-cont">我的认证</view>
 					<view class="t-right"><image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/you2.png" mode=""></image></view>
 				</view>
-				<view class="three-box" @tap="opennew('shouhuodizhi')">
+				<view class="three-box" @tap="useropen('shouhuodizhi')">
 					<view class="t-left"><image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/dingwei2.png" mode=""></image></view>
 					<view class="t-cont">收货地址</view>
 					<view class="t-right"><image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/you2.png" mode=""></image></view>
@@ -100,6 +100,18 @@ export default {
 		};
 	},
 	methods: {
+		useropen:function(id){
+			if(uni.getStorageSync('userid')==''){
+				uni.showToast({
+					title:'请先进行登陆',
+					icon:'none'
+				})
+			}else{
+				uni.navigateTo({
+					url: '../' + id + '/' + id
+				});
+			}
+		},
 		// 打开新页面
 		opennew: function(id) {
 			uni.navigateTo({

@@ -3,7 +3,7 @@
 		<view class="main">
 			<view class="main-box">
 				<scroll-view class="main-left" scroll-y="">
-					<view class="nav-left-item" v-for="(i,index) in mydata" :class="myindex==index?'l-zi':''" >机械五金</view>
+					<view class="nav-left-item" v-for="(i,index) in mydata" :class="myindex==index?'l-zi':''" @tap="changeone(index)">机械五金</view>
 				</scroll-view>
 				<scroll-view class="main-right" scroll-y="">
 					<view class="r-top">
@@ -67,8 +67,8 @@
 	export default {
 		data() {
 			return {
-				myindex:1,
-				fenleidata:[],
+				myindex:1,  //一级分类索引
+				fenleidata:[],  //分类数组
 				mydata:[
 					'建材家居',
 					'服装纺织',
@@ -77,6 +77,10 @@
 			}
 		},
 		methods: {
+			// 点击一级份分类
+			changeone:function(index){
+				this.myindex=index
+			},
 			//跳转页面
 			opennew:function(id){
 				uni.navigateTo({
@@ -89,7 +93,28 @@
 					url: '../'+id+'/'+id
 				});
 				
+			},
+			myajax:function(){
+				uni.showLoading({
+					title: '加载中',
+					mask: true,
+				});
+				uni.request({
+					url: '',
+					method: 'GET',
+					data: {},
+					success: res => {},
+					fail: () => {},
+					complete: () => {}
+				});
+				uni.hideLoading({
+					title: '加载中',
+					mask: true,
+				});
 			}
+		},
+		onLoad:function(){
+			this.myajax()
 		}
 	}
 </script>

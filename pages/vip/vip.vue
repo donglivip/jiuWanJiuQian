@@ -163,6 +163,20 @@ export default {
 		},
 		// 开通会员
 		openvip:function(){
+			if(uni.getStorageSync('userid')==''){
+				uni.showModal({
+				    title: '温馨提示',
+				    content: '请先进行登陆',
+				    success: function (res) {
+				        if (res.confirm) {
+				            uni.navigateBack();
+				        } else if (res.cancel) {
+				            console.log('用户点击取消');
+				        }
+				    }
+				});
+				return
+			}
 			// 5+app
 			// #ifdef  APP-PLUS
 			uni.showActionSheet({

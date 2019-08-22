@@ -7,7 +7,7 @@
 				<input type="text" value="请输入关键字" class="sousuo" disabled="" placeholder-class="input" />
 			</view>
 			<view class="header-bottom">
-				<swiper class="swiper" autoplay="true">
+				<swiper class="swiper" autoplay="true"  circular='true' indicator-dots='true' indicator-active-color='#ffffff' indicator-color='rgba(255,255,255,.6)'>
 					<swiper-item><view class="swiper-item uni-bg-red"><image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/banner1.png"></image></view></swiper-item>
 					<swiper-item><view class="swiper-item uni-bg-green"><image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/banner1.png"></image></view></swiper-item>
 					<swiper-item><view class="swiper-item uni-bg-blue"><image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/banner1.png"></image></view></swiper-item>
@@ -272,7 +272,7 @@ export default {
 	bottom: 30rpx!important;
 }
 .header-bottom image {
-	height: 260rpx;
+	height: 300rpx;
 	width: 680rpx;
 }
 

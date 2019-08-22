@@ -136,10 +136,18 @@
 			</view>
 		</scroll-view>
 		<view class="bottom" v-if="!isvip">
-			<view class="bottom-left" @tap="opennew('share')">
-				<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/xiaolian.png" mode=""></image>
-				<view class="bottom-text">分享给好友</view>
-			</view>
+			<!-- #ifdef APP-PLUS -->
+				<view class="bottom-left" @tap="share()">
+					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/xiaolian.png" mode=""></image>
+					<view class="bottom-text">分享给好友</view>
+				</view>
+			<!-- #endif -->
+			<!-- #ifdef MP-WEIXIN -->
+				<button class="bottom-left" open-type="share">
+					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/xiaolian.png" mode=""></image>
+					<view class="bottom-text">分享给好友</view>
+				</button>
+			<!-- #endif -->
 			<view class="bottom-right" @tap="opennew('vip')">
 				<view class="r-top">
 					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/quanyi.png" mode=""></image>
@@ -149,10 +157,18 @@
 			</view>
 		</view>
 		<view class="bottom" v-if="isvip">
-			<view class="bottom-left02" @tap="opennew('share')">
-				<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/xiaolian.png" mode=""></image>
-				<view class="bottom-text">分享给好友</view>
-			</view>
+			<!-- #ifdef APP-PLUS -->
+				<view class="bottom-left02" @tap="share()">
+					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/xiaolian.png" mode=""></image>
+					<view class="bottom-text">分享给好友</view>
+				</view>
+			<!-- #endif -->
+			<!-- #ifdef MP-WEIXIN -->
+				<button class="bottom-left02" open-type="share">
+					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/xiaolian.png" mode=""></image>
+					<view class="bottom-text">分享给好友</view>
+				</button>
+			<!-- #endif -->
 			<view class="bottom-right02" @tap="opennew('baojiabiao')">
 				<view class="r-top">
 					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/quanyi.png" mode=""></image>
@@ -178,6 +194,23 @@ export default {
 		};
 	},
 	methods: {
+		// 分享给好友
+		share: function() {
+			uni.share({
+				provider: 'weixin',
+				scene: 'WXSceneSession',
+				type: 1,
+				summary: '我正在久万久千',
+				success: function(res) {
+					uni.showToast({
+						title:'分享成功'
+					})
+				},
+				fail: function(err) {
+					console.log('fail:' + JSON.stringify(err));
+				}
+			});
+		},
 		changemore: function() {
 			// 切换更多信息
 			this.ismore = !this.ismore;
@@ -249,6 +282,10 @@ export default {
 </script>
 
 <style>
+	button{
+		border: 0;
+		border-radius: 0;
+	}
 .fade-enter-active,
 .fade-leave-active {
 	transition: all 0.6s;
