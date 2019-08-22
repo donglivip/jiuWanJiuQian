@@ -1,4 +1,14 @@
 
+.cred{
+		color: #FF0000;
+		font-size: 30rpx;
+		font-weight: 600;
+		margin: 0 6rpx;
+}
+.text-bottom{
+		font-size: 26rpx;
+		margin: 60rpx auto 0;
+}
 .btn {
 	width: 592rpx;
 	height: 96rpx;

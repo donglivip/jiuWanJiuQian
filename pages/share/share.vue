@@ -42,6 +42,9 @@
 				<view class="text">3000元</view>
 				<view class="text">5000元</view>
 			</view>
+			<view class="text-bottom tcenter">
+				已累计领取 <text class="cred">56777</text>元
+			</view>
 		</view>
 		<!-- 活动规则 -->
 		<view class="rule" :style="{ background: 'url(' + imageURL02 + ')', 'background-size': '100% 100%' }">
@@ -69,10 +72,35 @@ export default {
 			Percentage: '40%', //20% 60%
 			Percentage02: 0.4,
 			imageURL: 'https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/shareback.jpg',
-			imageURL02: 'https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/share04back.png'
+			imageURL02: 'https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/share04back.png',
+			mydata:{}
 		};
 	},
+	onLoad:function(){
+		this.myajax()
+	},
 	methods: {
+		// 初始化数据
+		myajax:function(){
+			var that=this
+			uni.showLoading({
+			    title: '加载中',
+				mask:true
+			});
+			uni.request({
+			    url: 'https://www.example.com/request', //仅为示例，并非真实接口地址。
+			    data: {
+			        text: 'uni.request'
+			    },
+			    success: (res) => {
+			        console.log(res.data);
+					that.mydata=res.data
+			    }
+			});
+			setTimeout(function() {
+				uni.hideLoading()
+			}, 1000);
+		},
 		share: function() {
 			uni.share({
 				provider: 'weixin',
@@ -102,6 +130,16 @@ export default {
 </script>
 
 <style>
+	.cred{
+		color: #FF0000;
+		font-size: 30rpx;
+		font-weight: 600;
+		margin: 0 6rpx;
+	}
+	.text-bottom{
+		font-size: 26rpx;
+		margin: 60rpx auto 0;
+	}
 .btn {
 	width: 592rpx;
 	height: 96rpx;

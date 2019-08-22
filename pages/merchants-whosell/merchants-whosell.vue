@@ -4,7 +4,7 @@
 		<view class="header" v-if="type == 0">
 			<view class="header-left">
 				<view class="h-top">
-					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/lv.png" mode=""></image>
+					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/lv.jpg" mode=""></image>
 					<view class="h-text">1</view>
 				</view>
 				<view class="h-bott h-zi">认证信息</view>
@@ -47,7 +47,8 @@
 						<text>*</text>
 						营业执照图片
 					</view>
-					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/tianjia.png" mode="" @tap="choseimage()"></image>
+					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/tianjia.png" mode="" @tap="choseimage()" v-if="shopImg==''"></image>
+					<image :src="shopImg" v-if="shopImg!=''" @tap="choseimage()"></image>
 				</view>
 				<view class="box-bottom">
 					要求：
@@ -75,7 +76,7 @@
 							<text>*</text>
 							身份证号码
 						</view>
-						<input type="text" value="" placeholder="请输入身份证号码" placeholder-class="qiugou" />
+						<input type="idcard" value="" placeholder="请输入身份证号码" placeholder-class="qiugou" />
 					</view>
 				</view>
 			</view>
@@ -87,7 +88,7 @@
 			<div class="examine-title tcenter">正在审核</div>
 			<div class="examine-time tcenter">预计2小时-1天内完成</div>
 			<div class="examine-alert tcenter">请您绑定手机号，审核结果我们会通过短信通知您</div>
-			<div class="examine-btn center" @tap="opennew('VerificationPhone')">点此绑定手机号</div>
+			<!-- <div class="examine-btn center" @tap="opennew('VerificationPhone')">点此绑定手机号</div> -->
 		</div>
 		<!-- 审核通过 -->
 		<div class="wrapper backwhite" v-if="type == 2">
@@ -97,7 +98,7 @@
 			<div class="examine-time tcenter">
                  您可以登录
 				<text class="examine-alert">
-                www.jiuwanjiuqian.com
+                www.9w9q.com
                 </text>
 				调整店铺信息
             </div>
@@ -122,9 +123,31 @@ export default {
 		return {
 			myindex: 0, //0 企业 1 个人
 			type: 0,    // 认证状态
+			shopImg:''
 		};
 	},
 	methods: {
+		// 初始化数据
+		myajax:function(){
+			var that=this
+			uni.showLoading({
+			    title: '加载中',
+				mask:true
+			});
+			uni.request({
+			    url: 'https://www.example.com/request', //仅为示例，并非真实接口地址。
+			    data: {
+			        text: 'uni.request'
+			    },
+			    success: (res) => {
+			        console.log(res.data);
+					that.mydata=res.data
+			    }
+			});
+			setTimeout(function() {
+				uni.hideLoading()
+			}, 1000);
+		},
 		// 切换认证方式
 		bian: function(index) {
 			this.myindex = index;
@@ -152,22 +175,37 @@ export default {
 		// 上传图片
 		choseimage: function(index) {
 			var that = this;
+			//调取相册
 			uni.chooseImage({
-				count: 1,
-				success: chooseImageRes => {
-					that.jiadata[index].images = chooseImageRes.tempFilePaths[0];
-					const tempFilePaths = chooseImageRes.tempFilePaths;
+				count: 1, //默认9
+				success: function(res) {
 					uni.uploadFile({
-						url: 'https://www.example.com/upload', //仅为示例，非真实的接口地址
-						filePath: tempFilePaths[0],
+						url: getApp().globalData.byurl + '/buyer/base/upload', //仅为示例，非真实的接口地址
+						filePath: res.tempFilePaths[0],
 						name: 'file',
+						formData: {
+							scene: 'idcard'
+						},
 						success: uploadFileRes => {
-							console.log(uploadFileRes.data);
+							that.shopImg  = JSON.parse(uploadFileRes.data).url;
+						},
+						fail: err => {
+							console.log(err);
 						}
+					});
+				},
+				fail: function(fa) {
+					//提示框
+					uni.showToast({
+						title: '失败，请重试',
+						duration: 2000
 					});
 				}
 			});
 		}
+	},
+	onShow:function(){
+		this.myajax()
 	}
 };
 </script>
@@ -227,9 +265,6 @@ page {
 }
 .main {
 	height: calc(100% - 230rpx);
-}
-.grey {
-	top: 2rpx;
 }
 .header {
 	display: flex;

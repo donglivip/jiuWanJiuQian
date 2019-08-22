@@ -15,7 +15,8 @@
 						<text>*</text>
 						营业执照图片
 					</view>
-					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/tianjia.png" mode="" @tap="myajax()"></image>
+					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/tianjia.png" mode="" @tap="upimg()" v-if="enImg==''"></image>
+					<image :src="enImg" @tap="upimg()" v-if="enImg!=''"></image>
 				</view>
 				<view class="box-bottom">
 					要求：
@@ -37,7 +38,9 @@
 <script>
 export default {
 	data() {
-		return {};
+		return {
+			enImg:''
+		};
 	},
 	methods: {
 		//跳转页面
@@ -46,22 +49,26 @@ export default {
 				url: '../' + id + '/' + id
 			});
 		},
-		myajax: function() {
+		upimg: function() {
+			var that=this
 			//调取相册
 			uni.chooseImage({
 				count: 1, //默认9
 				success: function(res) {
-					console.log(JSON.stringify(res))
-					uni.request({
-					    url: getApp().globalData.byurl + '/buyer/base/upload', 
-						method:'POST',
-					    data: {
-					        scene: 'idcard',
-							file:res.tempFilePaths[0]
-					    },
-					    success: (res) => {
-					        console.log(res.data)
-					    }
+					console.log(res.tempFilePaths[0]);
+					uni.uploadFile({
+						url: getApp().globalData.byurl + '/buyer/base/upload', //仅为示例，非真实的接口地址
+						filePath: res.tempFilePaths[0],
+						name: 'file',
+						formData: {
+							scene: 'idcard'
+						},
+						success: uploadFileRes => {
+							that.enImg=JSON.parse(uploadFileRes.data).url
+						},
+						fail: err => {
+							console.log(err);
+						}
 					});
 				},
 				fail: function(fa) {

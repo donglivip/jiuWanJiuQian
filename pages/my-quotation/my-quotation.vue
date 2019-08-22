@@ -8,12 +8,12 @@
 				</view>
 				<view class="header-left">
 					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/sousuo.png" mode=""></image>
-					<input type="text" value="" placeholder="请输入求购信息关键字" placeholder-class="sou"/>
+					<input type="text"  v-model="seartext" placeholder="请输入求购信息关键字" placeholder-class="sou"/>
 				</view>
-				<view class="header-right">搜索</view>
+				<view class="header-right" @tap="gosearch">搜索</view>
 			</view>
-			<scroll-view class="main-box" scroll-y="">
-				<view class="main-three">
+			<scroll-view class="main-box" scroll-y="" @scrolltolower='myajax()'>
+				<view class="main-three" @tap="opennew('baojiabiao')">
 					<view class="three-top">
 						<view class="t-text">求购单编号:2019071085478R</view>
 						<view class="t-news">采购商评标中</view>
@@ -38,10 +38,10 @@
 						</view>
 					</view>
 					<view class="b-b">
-						<view class="three-text" @tap="opennew('baojiabiao')">修改报价</view>
+						<view class="three-text" @tap.stop="opennew('baojiabiao')">修改报价</view>
 						<view class="three-y">
 							<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/dianhua.png" mode=""></image>
-							<view class="three-word" @tap="tellphone('13218573474')">联系采购商</view>
+							<view class="three-word" @tap.stop="tellphone('13218573474')">联系采购商</view>
 						</view>
 					</view>
 				</view>
@@ -147,10 +147,44 @@
 	export default {
 		data() {
 			return {
-				
+				type:'', //求购单分类
+				pageNum:0, //当前页数
+				mydata:[], //求购单数组
+				seartext:'', //搜索关键字
 			}
 		},
+		onShow:function(){
+			this.myajax()
+		},
 		methods: {
+			// 点击搜索
+			gosearch:function(){
+				this.pageNum++
+				this.mydata=[]
+				this.myajax()
+			},
+			// 初始化数据
+			myajax:function(){
+				var that=this
+				this.pageNum++
+				uni.showLoading({
+				    title: '加载中',
+					mask:true
+				});
+				uni.request({
+				    url: 'https://www.example.com/request', //仅为示例，并非真实接口地址。
+				    data: {
+				        text: 'uni.request'
+				    },
+				    success: (res) => {
+				        console.log(res.data);
+						that.mydata.push(res.data)
+				    }
+				});
+				setTimeout(function() {
+					uni.hideLoading()
+				}, 1000);
+			},
 			opennew:function(id){
 				uni.navigateTo({
 					url: '../'+id+'/'+id
@@ -175,6 +209,7 @@
 				    itemList: ['全部', '已过期', '审核中'],
 				    success: function (res) {
 				        console.log('选中了第' + (res.tapIndex + 1) + '个按钮');
+						that.gosearch()
 				    },
 				    fail: function (res) {
 				        console.log(res.errMsg);

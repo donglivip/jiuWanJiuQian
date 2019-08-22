@@ -91,16 +91,39 @@
 	export default {
 		data() {
 			return {
-				
+				mydata:[],//收货地址数组
 			}
 		},
 		methods: {
+			// 初始化数据
+			myajax:function(){
+				var that=this
+				uni.showLoading({
+				    title: '加载中',
+					mask:true
+				});
+				uni.request({
+				    url: 'https://www.example.com/request', //仅为示例，并非真实接口地址。
+				    data: {
+				        text: 'uni.request'
+				    },
+				    success: (res) => {
+				        console.log(res.data);
+						that.mydata=res.data
+				    }
+				});
+				setTimeout(function() {
+					uni.hideLoading()
+				}, 1000);
+			},
+			// 打开新页面
 			opennew:function(id){
 				uni.navigateTo({
 					url: '../'+id+'/'+id
 				});
 				
 			},
+			// 删除收货地址
 			godelete:function(index){
 				uni.showModal({
 				    title: '温馨提示',
@@ -115,6 +138,9 @@
 				    }
 				});
 			}
+		},
+		onShow:function(){
+			this.myajax()
 		}
 	}
 </script>

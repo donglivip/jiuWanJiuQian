@@ -60,7 +60,7 @@
 				</view>
 			</view>
 		</scroll-view>
-		<view class="bottom" @tap="opennew('businessmen-stationed')">提 交</view>
+		<view class="bottom" @tap="back">提 交</view>
 	</view>
 </template>
 
@@ -73,6 +73,10 @@ export default {
 		};
 	},
 	methods: {
+		back:function(){
+			// 返回上一页
+			uni.navigateBack()
+		},
 		bian: function(index) {
 			this.myindex = index;
 		},

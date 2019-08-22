@@ -28,7 +28,7 @@
 			</view>
 			<view class="main-three">物品信息</view>
 			<view class="box">
-				<view class="box-box" v-for="(val, index) in jiadata">
+				<view class="box-box" v-for="(val, index) in jiadata" :key='index'>
 					<view class="main-two">
 						<view class="two-text">
 							<text class="a">*</text>
@@ -49,7 +49,7 @@
 							<text class="a">*</text>
 							数量
 						</view>
-						<input type="text" value="" placeholder="请输入求购数量" class="two-news" placeholder-class="qiugou" />
+						<input type="number" value="" placeholder="请输入求购数量" class="two-news" placeholder-class="qiugou" />
 					</view>
 					<view class="main-two">
 						<view class="two-text">
@@ -60,7 +60,7 @@
 					</view>
 					<view class="main-two">
 						<view class="two-text">品牌</view>
-						<input type="text" value="" placeholder="请输入求购数量" class="two-news" placeholder-class="qiugou" />
+						<input type="text" value="" placeholder="请输入求购品牌" class="two-news" placeholder-class="qiugou" />
 					</view>
 					<view class="main-two">
 						<view class="two-text">规格</view>
@@ -125,9 +125,9 @@
 					</view>
 					<view class="a-box">
 						<view class="a-left">发票要求</view>
-						<view class="a-right" @tap="showyaoqiu">
-							<view class="a-text">{{ fapiao[fapiaoindex] }}</view>
-							<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/you2.png" mode=""></image>
+						<view class="a-right">
+							<view class="a-text">增值税普通发票</view>
+							<!-- <image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/you2.png" mode=""></image> -->
 						</view>
 					</view>
 					<view class="a-bott">
@@ -157,7 +157,7 @@
 				<view class="eight-news">《严禁发布规则声明》</view>
 			</view>
 		</view>
-		<view class="bottom">提交</view>
+		<view class="bottom"  :class="state?'active':''">提交</view>
 	</scroll-view>
 </template>
 
@@ -175,13 +175,15 @@ export default {
 			fapiaoindex: 0, //发票index
 			date: currentDate, //当前日期
 			date02: currentDate, //当前日期
-			shengming:true, //声明
+			shengming: true, //声明
 			jiadata: [
 				{
 					cao: '',
 					images: ''
 				}
-			]
+			],
+			adressdata:[],//地址data
+			state:true, //是否可以提交
 		};
 	},
 	methods: {
@@ -204,7 +206,7 @@ export default {
 				this.shui = !this.shui;
 			} else if (type == 1) {
 				this.yunfei = !this.yunfei;
-			}else if (type == 2) {
+			} else if (type == 2) {
 				this.shengming = !this.shengming;
 			}
 		},
@@ -232,18 +234,31 @@ export default {
 		// 上传图片
 		choseimage: function(index) {
 			var that = this;
+			//调取相册
 			uni.chooseImage({
-				count: 1,
-				success: chooseImageRes => {
-					that.jiadata[index].images = chooseImageRes.tempFilePaths[0];
-					const tempFilePaths = chooseImageRes.tempFilePaths;
+				count: 1, //默认9
+				success: function(res) {
+					console.log(res.tempFilePaths[0]);
 					uni.uploadFile({
-						url: 'https://www.example.com/upload', //仅为示例，非真实的接口地址
-						filePath: tempFilePaths[0],
+						url: getApp().globalData.byurl + '/buyer/base/upload', //仅为示例，非真实的接口地址
+						filePath: res.tempFilePaths[0],
 						name: 'file',
+						formData: {
+							scene: 'idcard'
+						},
 						success: uploadFileRes => {
-							console.log(uploadFileRes.data);
+							that.jiadata[index].images  = JSON.parse(uploadFileRes.data).url;
+						},
+						fail: err => {
+							console.log(err);
 						}
+					});
+				},
+				fail: function(fa) {
+					//提示框
+					uni.showToast({
+						title: '失败，请重试',
+						duration: 2000
 					});
 				}
 			});
@@ -271,6 +286,22 @@ export default {
 		// 获取最迟收货日期回调
 		bindDateChange02: function(e) {
 			this.date02 = e.target.value;
+		},
+		// 查询我的收货地址
+		myajax:function(){
+			uni.request({
+			    url: 'https://www.example.com/request', //仅为示例，并非真实接口地址。
+			    data: {
+			        text: 'uni.request'
+			    },
+			    header: {
+			        'custom-header': 'hello' //自定义请求头信息
+			    },
+			    success: (res) => {
+			        console.log(res.data);
+			        this.adressdata =res.data
+			    }
+			});
 		}
 	},
 	computed: {
@@ -279,6 +310,18 @@ export default {
 		},
 		endDate() {
 			return this.getDate('end');
+		}
+	},
+	onShow: function(){
+		console.log(uni.getStorageSync('userid'))
+		if(uni.getStorageSync('userid')==''){
+			this.state=false
+			uni.showToast({
+				title:'请先进行登陆',
+				icon:'none'
+			})
+		}else{
+			this.myajax()
 		}
 	}
 };
@@ -614,5 +657,9 @@ textarea {
 	background: #bdbdbd;
 	border-radius: 50rpx;
 	margin: 30rpx;
+}
+.active{
+	background: #008a05;
+	color: #FFFFFF;
 }
 </style>

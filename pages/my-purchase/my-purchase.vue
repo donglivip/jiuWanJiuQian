@@ -8,12 +8,12 @@
 				</view>
 				<view class="header-left">
 					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/sousuo.png" mode=""></image>
-					<input type="text" value="" placeholder="请输入求购信息关键字" placeholder-class="sou" />
+					<input type="text" placeholder="请输入求购信息关键字" placeholder-class="sou" v-model="seartext"/>
 				</view>
-				<view class="header-right">搜索</view>
+				<view class="header-right" @tap="gosearch">搜索</view>
 			</view>
-			<scroll-view class="main-box" scroll-y="" @tap="opennew('purchase-details')">
-				<view class="main-three">
+			<scroll-view class="main-box" scroll-y="" @scrolltolower='myajax()'>
+				<view class="main-three" @tap="opennew('purchase-details')">
 					<view class="three-top">
 						<view class="t-text">求购单编号:2019071085478R</view>
 						<view class="t-news">接受报价中</view>
@@ -195,10 +195,44 @@
 export default {
 	data() {
 		return {
-			type:''
+			type:'', //求购单分类
+			pageNum:0, //当前页数
+			mydata:[], //求购单数组
+			seartext:'', //搜索关键字
 		};
 	},
+	onShow:function(){
+		this.myajax()
+	},
 	methods: {
+		// 点击搜索
+		gosearch:function(){
+			this.pageNum++
+			this.mydata=[]
+			this.myajax()
+		},
+		// 初始化数据
+		myajax:function(){
+			var that=this
+			this.pageNum++
+			uni.showLoading({
+			    title: '加载中',
+				mask:true
+			});
+			uni.request({
+			    url: 'https://www.example.com/request', //仅为示例，并非真实接口地址。
+			    data: {
+			        text: 'uni.request'
+			    },
+			    success: (res) => {
+			        console.log(res.data);
+					that.mydata.push(res.data)
+			    }
+			});
+			setTimeout(function() {
+				uni.hideLoading()
+			}, 1000);
+		},
 		opennew: function(id) {
 			uni.navigateTo({
 				url: '../' + id + '/' + id
@@ -226,10 +260,12 @@ export default {
 		},
 		// 展示求购单类型
 		showtype:function(){
+			var that=this
 			uni.showActionSheet({
 			    itemList: ['全部', '已过期', '审核中'],
 			    success: function (res) {
 			        console.log('选中了第' + (res.tapIndex + 1) + '个按钮');
+					that.gosearch()
 			    },
 			    fail: function (res) {
 			        console.log(res.errMsg);

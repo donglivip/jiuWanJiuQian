@@ -3,9 +3,9 @@
 		<view class="header">
 			<view class="header-left">
 				<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/sousuo.png" mode=""></image>
-				<input type="text" value="" placeholder="请输入求购信息关键字" placeholder-class="sou"/>
+				<input type="text" value="" placeholder="请输入求购信息关键字" placeholder-class="sou" confirm-type="search" @confirm="myajax"/>
 			</view>
-			<view class="header-right">取消</view>
+			<view class="header-right" @tap="back">取消</view>
 		</view>
 		<view class="main">
 			<view class="main-one">
@@ -32,7 +32,29 @@
 			}
 		},
 		methods: {
-			
+			// 搜索热门
+			myajax:function(){
+				uni.request({
+				    url: 'https://www.example.com/request', //仅为示例，并非真实接口地址。
+				    data: {
+				        text: 'uni.request'
+				    },
+				    header: {
+				        'custom-header': 'hello' //自定义请求头信息
+				    },
+				    success: (res) => {
+				        console.log(res.data);
+				        this.text = 'request success';
+				    }
+				});
+			},
+			// 返回上一页
+			back:function(){
+				uni.navigateBack();
+			}
+		},
+		onShow:function(){
+			this.myajax()
 		}
 	}
 </script>

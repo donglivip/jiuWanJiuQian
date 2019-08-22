@@ -1,5 +1,5 @@
 <template>
-	<scroll-view class="wrapper" scroll-y="">
+	<scroll-view class="wrapper" scroll-y="" @scrolltolower='myajax()'>
 		<view class="back"></view>
 		<view class="header">
 			<view class="header-top" @tap="opennew('sousuo')">
@@ -175,11 +175,12 @@
 export default {
 	data() {
 		return {
-			title: 'Hello'
+			pageNum:0, //当前页数
+			mydata:[], //求购单数组
 		};
 	},
 	onLoad() {
-		this.myajax();
+		this.myajax()
 	},
 	methods: {
 		//跳转页面
@@ -188,8 +189,27 @@ export default {
 				url: '../' + id + '/' + id
 			});
 		},
-		myajax: function() {
-			
+		// 拉取数据
+		myajax:function(){
+			var that=this
+			this.pageNum++
+			uni.showLoading({
+			    title: '加载中',
+				mask:true
+			});
+			uni.request({
+			    url: 'https://www.example.com/request', //仅为示例，并非真实接口地址。
+			    data: {
+			        text: 'uni.request'
+			    },
+			    success: (res) => {
+			        console.log(res.data);
+					that.mydata.push(res.data)
+			    }
+			});
+			setTimeout(function() {
+				uni.hideLoading()
+			}, 1000);
 		}
 	}
 };

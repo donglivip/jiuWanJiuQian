@@ -10,7 +10,7 @@
 				</view>
 				<view class="box-top">
 					<view class="box-text"><text>*</text>身份证号码</view>
-					<input type="text" value="" placeholder="请输入身份证号码" placeholder-class="qiugou"/>
+					<input type="idcard" value="" placeholder="请输入身份证号码" placeholder-class="qiugou"/>
 				</view>
 			</view>
 		</view>

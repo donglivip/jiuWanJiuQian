@@ -3,24 +3,26 @@
 		<view class="header">
 			<view class="header-left">
 				<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/sousuo.png" mode=""></image>
-				<input type="text" value="" placeholder="请输入求购信息关键字" placeholder-class="sou"/>
+				<input type="text" value="" placeholder="请输入求购信息关键字" placeholder-class="sou" confirm-type='search' @confirm='myajax' v-model="seartext"/>
 			</view>
-			<view class="header-right">取消</view>
+			<view class="header-right" @tap="cancel">取消</view>
 		</view>
 		<view class="main">
 			<view class="main-one">
-				<view class="one-left">综合</view>
-				<view class="one-content">
+				<view class="one-left" :class="(time01==0&&time02==0)?'one-active':''" @tap="sort(0)">综合</view>
+				<view class="one-content" @tap="sort(1)">
 					<view class="one-text">发布时间</view>
-					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/lvshang.png" mode=""></image>
+					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/lvshang.png" mode="" v-show="time01==1"></image>
+					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/lvxia.png" mode="" v-show="time01==0"></image>
 				</view>
-				<view class="one-content">
+				<view class="one-content"  @tap="sort(2)">
 					<view class="one-text">截止时间</view>
-					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/huishangxia.png" mode=""></image>
+					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/lvshang.png" mode="" v-show="time02==1"></image>
+					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/lvxia.png" mode="" v-show="time02==0"></image>
 				</view>
 			</view>
-			<scroll-view class="main-box" scroll-y=""  @tap="opennew('qiugouxiangqing')">
-				<view class="main-three">
+			<scroll-view class="main-box" scroll-y="" @scrolltolower='myajax()'>
+				<view class="main-three"  @tap="opennew('qiugouxiangqing')">
 					<view class="three-left">
 						<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/tu.png" mode=""></image>
 					</view>
@@ -218,16 +220,67 @@
 	export default {
 		data() {
 			return {
-				
+				time01:0,  //  发布时间升序  发布时间降序
+				time02:0,  //  截止时间升序  截止时间降序
+				seartext:'',   //搜索内容
+				pageNum:0, //当前页数
+				mydata:[]
 			}
 		},
 		methods: {
+			cancel:function(){
+				// 取消搜索
+				this.seartext=''
+				uni.hideKeyboard()
+			},
+			// 筛选条件
+			sort:function(type){
+				if(type==0){
+					// 综合排序
+					this.time01=this.time02=0
+				}else if(type==1){
+					// 发布时间排序
+					this.time01=this.time01==0?1:0
+				}else if(type==2){
+					// 发布时间排序
+					this.time02=this.time02==0?1:0
+				}
+				this.pageNum=0
+				this.mydata=[]
+				this.myajax()
+			},
 			opennew:function(id){
 				uni.navigateTo({
 					url: '../'+id+'/'+id
 				});
-				
+			},
+			// 拉取数据
+			myajax:function(){
+				var that=this
+				this.pageNum++
+				uni.showLoading({
+				    title: '加载中',
+					mask:true
+				});
+				uni.request({
+				    url: 'https://www.example.com/request', //仅为示例，并非真实接口地址。
+				    data: {
+				        text: 'uni.request'
+				    },
+					method:'POST',
+				    success: (res) => {
+						that.mydata.push(res.data)
+				    }
+				});
+				setTimeout(function() {
+					uni.hideLoading()
+				}, 1000);
 			}
+		},
+		onShow: function(){
+			this.pageNum=0
+			this.mydata=[]
+			this.myajax()
 		}
 	}
 </script>
@@ -282,8 +335,10 @@ input::-webkit-input-placeholder{font-size: .12rpx;}
 }
 .one-left{
 	font-size: 28rpx;
-	color: #008A05;
 	font-weight: 600;
+}
+.one-active{
+	color: #008A05;
 }
 .one-content{
 	display: flex;

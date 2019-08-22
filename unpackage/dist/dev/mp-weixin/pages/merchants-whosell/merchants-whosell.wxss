@@ -54,9 +54,6 @@ page {
 .main {
 	height: calc(100% - 230rpx);
 }
-.grey {
-	top: 2rpx;
-}
 .header {
 	display: -webkit-box;
 	display: -webkit-flex;

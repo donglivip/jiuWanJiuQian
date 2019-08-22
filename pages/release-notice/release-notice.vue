@@ -4,70 +4,15 @@
 			<view class="header">
 				<view class="header-left">
 					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/sousuo.png" mode=""></image>
-					<input type="text" value="" placeholder="请输入求购信息关键字" placeholder-class="sou"/>
+					<input type="text" placeholder="请输入求购信息关键字" placeholder-class="sou" confirm-type="search" @confirm="myajax" v-model="seartext"/>
 				</view>
 				<view class="header-right">取消</view>
 			</view>
 			<scroll-view class="main-box" scroll-y="">
-				<view class="main-one">
-					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/weixuan.png" mode=""></image>
-					<view class="one-text">江苏哈哈哈网络科技有限公司</view>
-				</view>
-				<view class="main-one">
-					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/xuan.png" mode=""></image>
-					<view class="one-text one-zi">江苏哈哈哈网络科技有限公司</view>
-				</view>
-				<view class="main-one">
-					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/weixuan.png" mode=""></image>
-					<view class="one-text">江苏哈哈哈网络科技有限公司</view>
-				</view>
-				<view class="main-one">
-					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/xuan.png" mode=""></image>
-					<view class="one-text one-zi">江苏哈哈哈网络科技有限公司</view>
-				</view>
-				<view class="main-one">
-					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/weixuan.png" mode=""></image>
-					<view class="one-text">江苏哈哈哈网络科技有限公司</view>
-				</view>
-				<view class="main-one">
-					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/weixuan.png" mode=""></image>
-					<view class="one-text">江苏哈哈哈网络科技有限公司</view>
-				</view>
-				<view class="main-one">
-					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/weixuan.png" mode=""></image>
-					<view class="one-text">江苏哈哈哈网络科技有限公司</view>
-				</view>
-				<view class="main-one">
-					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/xuan.png" mode=""></image>
-					<view class="one-text one-zi">江苏哈哈哈网络科技有限公司</view>
-				</view>
-				<view class="main-one">
-					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/weixuan.png" mode=""></image>
-					<view class="one-text">江苏哈哈哈网络科技有限公司</view>
-				</view>
-				<view class="main-one">
-					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/weixuan.png" mode=""></image>
-					<view class="one-text">江苏哈哈哈网络科技有限公司</view>
-				</view>
-				<view class="main-one">
-					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/weixuan.png" mode=""></image>
-					<view class="one-text">江苏哈哈哈网络科技有限公司</view>
-				</view>
-				<view class="main-one">
-					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/xuan.png" mode=""></image>
-					<view class="one-text one-zi">江苏哈哈哈网络科技有限公司</view>
-				</view>
-				<view class="main-one">
-					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/weixuan.png" mode=""></image>
-					<view class="one-text">江苏哈哈哈网络科技有限公司</view>
-				</view>
-				<view class="main-one">
-					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/weixuan.png" mode=""></image>
-					<view class="one-text">江苏哈哈哈网络科技有限公司</view>
-				</view>
-				<view class="main-one">
-					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/weixuan.png" mode=""></image>
-					<view class="one-text">江苏哈哈哈网络科技有限公司</view>
+				<view class="main-one" v-for="(i,index) in shopdata" :key="index" @tap="change(index)">
+					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/weixuan.png" mode="" v-if="!i.choose"></image>
+					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/xuan.png" mode="" v-if="i.choose"></image>
+					<view class="one-text" :class="i.choose?'one-zi':''">江苏哈哈哈网络科技有限公司</view>
 				</view>
 			</scroll-view>
 		</view>
@@ -79,7 +24,26 @@
 	export default {
 		data() {
 			return {
-				
+				//公司数组
+				shopdata:[  
+					{
+						name:'江苏哈哈哈网络科技有限公司',
+						choose:false
+					},
+					{
+						name:'江苏哈哈哈网络科技有限公司',
+						choose:false
+					},
+					{
+						name:'江苏哈哈哈网络科技有限公司',
+						choose:false
+					},
+					{
+						name:'江苏哈哈哈网络科技有限公司',
+						choose:false
+					}
+				],
+				seartext:'', //搜索关键字
 			}
 		},
 		methods: {
@@ -87,7 +51,14 @@
 				uni.navigateTo({
 					url: '../'+id+'/'+id
 				});
-				
+			},
+			// 选择中标公司
+			change:function(index){
+				this.shopdata[index].choose=!this.shopdata[index].choose
+			},
+			//初始化数据
+			myajax:function(){
+				console.log('shuju')
 			}
 		}
 	}

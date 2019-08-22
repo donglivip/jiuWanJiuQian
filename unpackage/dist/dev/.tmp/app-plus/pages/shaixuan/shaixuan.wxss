@@ -18,6 +18,7 @@
 	        justify-content: space-between;
 	padding: 0 30rpx;
 	border-bottom: 1px solid #E8E8E8;
+	background: #FFFFFF;
 }
 .header-left{
 	width: 610rpx;
@@ -70,11 +71,14 @@ input::-webkit-input-placeholder{font-size: .12rpx;}
 	        justify-content: space-between;
 	height: 80rpx;
 	padding: 0 30rpx;
+	background: #FFFFFF;
 }
 .one-left{
 	font-size: 28rpx;
-	color: #008A05;
 	font-weight: 600;
+}
+.one-active{
+	color: #008A05;
 }
 .one-content{
 	display: -webkit-box;

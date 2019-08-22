@@ -136,6 +136,27 @@ export default {
 		};
 	},
 	methods: {
+		// 初始化数据
+		myajax:function(){
+			var that=this
+			uni.showLoading({
+			    title: '加载中',
+				mask:true
+			});
+			uni.request({
+			    url: 'https://www.example.com/request', //仅为示例，并非真实接口地址。
+			    data: {
+			        text: 'uni.request'
+			    },
+			    success: (res) => {
+			        console.log(res.data);
+					that.mydata=res.data
+			    }
+			});
+			setTimeout(function() {
+				uni.hideLoading()
+			}, 1000);
+		},
 		// 切换会员种类
 		swiperChange:function(index){
 			this.swiperIndex=index.detail.current
@@ -201,7 +222,9 @@ export default {
 			});
 			// #endif
 		}
-		
+	},
+	onLoad:function(){
+		this.myajax()
 	}
 };
 </script>

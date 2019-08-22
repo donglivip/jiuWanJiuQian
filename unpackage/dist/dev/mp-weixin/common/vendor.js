@@ -1,9 +1,9 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["common/vendor"],{
 
 /***/ 0:
-/*!********************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/main.js ***!
-  \********************************************/
+/*!**************************************************************************!*\
+  !*** C:/Users/Shinelon/Documents/HBuilderProjects/jiuWanJiuQian/main.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -755,7 +755,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -1608,9 +1608,9 @@ function normalizeComponent (
 /***/ }),
 
 /***/ 107:
-/*!***********************************************************************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/main.js?{"page":"pages%2Frelease-notice%2Frelease-notice"} ***!
-  \***********************************************************************************************/
+/*!*********************************************************************************************************************************!*\
+  !*** C:/Users/Shinelon/Documents/HBuilderProjects/jiuWanJiuQian/main.js?{"page":"pages%2Fpurchase-details%2Fpurchase-details"} ***!
+  \*********************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1618,16 +1618,16 @@ function normalizeComponent (
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _releaseNotice = _interopRequireDefault(__webpack_require__(/*! ./pages/release-notice/release-notice.vue */ 108));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_releaseNotice.default);
+var _purchaseDetails = _interopRequireDefault(__webpack_require__(/*! ./pages/purchase-details/purchase-details.vue */ 108));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_purchaseDetails.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
 
 /***/ 11:
-/*!*****************************************************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/main.js?{"page":"pages%2Findex%2Findex"} ***!
-  \*****************************************************************************/
+/*!***********************************************************************************************************!*\
+  !*** C:/Users/Shinelon/Documents/HBuilderProjects/jiuWanJiuQian/main.js?{"page":"pages%2Findex%2Findex"} ***!
+  \***********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1642,76 +1642,8 @@ createPage(_index.default);
 /***/ }),
 
 /***/ 115:
-/*!***************************************************************************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/main.js?{"page":"pages%2Fpurchase-details%2Fpurchase-details"} ***!
-  \***************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _purchaseDetails = _interopRequireDefault(__webpack_require__(/*! ./pages/purchase-details/purchase-details.vue */ 116));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_purchaseDetails.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-
-/***/ 123:
-/*!*************************************************************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/main.js?{"page":"pages%2Fmy-wallet%2Fmy-wallet"} ***!
-  \*************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _myWallet = _interopRequireDefault(__webpack_require__(/*! ./pages/my-wallet/my-wallet.vue */ 124));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_myWallet.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-
-/***/ 131:
-/*!*************************************************************************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/main.js?{"page":"pages%2Fcash-withdrawal%2Fcash-withdrawal"} ***!
-  \*************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _cashWithdrawal = _interopRequireDefault(__webpack_require__(/*! ./pages/cash-withdrawal/cash-withdrawal.vue */ 132));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_cashWithdrawal.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-
-/***/ 139:
-/*!***************************************************************************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/main.js?{"page":"pages%2Fmy-certification%2Fmy-certification"} ***!
-  \***************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _myCertification = _interopRequireDefault(__webpack_require__(/*! ./pages/my-certification/my-certification.vue */ 140));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_myCertification.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-
-/***/ 147:
 /*!*******************************************************************************************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/main.js?{"page":"pages%2Fenterprise-certification%2Fenterprise-certification"} ***!
+  !*** C:/Users/Shinelon/Documents/HBuilderProjects/jiuWanJiuQian/main.js?{"page":"pages%2Fmy-wallet%2Fmy-wallet"} ***!
   \*******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -1720,16 +1652,67 @@ createPage(_myCertification.default);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _enterpriseCertification = _interopRequireDefault(__webpack_require__(/*! ./pages/enterprise-certification/enterprise-certification.vue */ 148));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _myWallet = _interopRequireDefault(__webpack_require__(/*! ./pages/my-wallet/my-wallet.vue */ 116));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_myWallet.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 123:
+/*!*******************************************************************************************************************************!*\
+  !*** C:/Users/Shinelon/Documents/HBuilderProjects/jiuWanJiuQian/main.js?{"page":"pages%2Fcash-withdrawal%2Fcash-withdrawal"} ***!
+  \*******************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _cashWithdrawal = _interopRequireDefault(__webpack_require__(/*! ./pages/cash-withdrawal/cash-withdrawal.vue */ 124));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_cashWithdrawal.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 131:
+/*!*********************************************************************************************************************************!*\
+  !*** C:/Users/Shinelon/Documents/HBuilderProjects/jiuWanJiuQian/main.js?{"page":"pages%2Fmy-certification%2Fmy-certification"} ***!
+  \*********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _myCertification = _interopRequireDefault(__webpack_require__(/*! ./pages/my-certification/my-certification.vue */ 132));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_myCertification.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 139:
+/*!*************************************************************************************************************************************************!*\
+  !*** C:/Users/Shinelon/Documents/HBuilderProjects/jiuWanJiuQian/main.js?{"page":"pages%2Fenterprise-certification%2Fenterprise-certification"} ***!
+  \*************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _enterpriseCertification = _interopRequireDefault(__webpack_require__(/*! ./pages/enterprise-certification/enterprise-certification.vue */ 140));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_enterpriseCertification.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
 
-/***/ 155:
-/*!***************************************************************************************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/main.js?{"page":"pages%2Fpersonal-certification%2Fpersonal-certification"} ***!
-  \***************************************************************************************************************/
+/***/ 147:
+/*!*********************************************************************************************************************************************!*\
+  !*** C:/Users/Shinelon/Documents/HBuilderProjects/jiuWanJiuQian/main.js?{"page":"pages%2Fpersonal-certification%2Fpersonal-certification"} ***!
+  \*********************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1737,16 +1720,16 @@ createPage(_enterpriseCertification.default);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _personalCertification = _interopRequireDefault(__webpack_require__(/*! ./pages/personal-certification/personal-certification.vue */ 156));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _personalCertification = _interopRequireDefault(__webpack_require__(/*! ./pages/personal-certification/personal-certification.vue */ 148));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_personalCertification.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
 
-/***/ 163:
-/*!*************************************************************************************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/main.js?{"page":"pages%2Fbusinessmen-stationed%2Fbusinessmen-stationed"} ***!
-  \*************************************************************************************************************/
+/***/ 155:
+/*!*************************************************************************************************************************!*\
+  !*** C:/Users/Shinelon/Documents/HBuilderProjects/jiuWanJiuQian/main.js?{"page":"pages%2Fmy-quotation%2Fmy-quotation"} ***!
+  \*************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1754,33 +1737,16 @@ createPage(_personalCertification.default);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _businessmenStationed = _interopRequireDefault(__webpack_require__(/*! ./pages/businessmen-stationed/businessmen-stationed.vue */ 164));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_businessmenStationed.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-
-/***/ 171:
-/*!*******************************************************************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/main.js?{"page":"pages%2Fmy-quotation%2Fmy-quotation"} ***!
-  \*******************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _myQuotation = _interopRequireDefault(__webpack_require__(/*! ./pages/my-quotation/my-quotation.vue */ 172));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _myQuotation = _interopRequireDefault(__webpack_require__(/*! ./pages/my-quotation/my-quotation.vue */ 156));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_myQuotation.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
 
-/***/ 179:
-/*!***********************************************************************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/main.js?{"page":"pages%2Fmodify-address%2Fmodify-address"} ***!
-  \***********************************************************************************************/
+/***/ 163:
+/*!*****************************************************************************************************************************!*\
+  !*** C:/Users/Shinelon/Documents/HBuilderProjects/jiuWanJiuQian/main.js?{"page":"pages%2Fmodify-address%2Fmodify-address"} ***!
+  \*****************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1788,16 +1754,16 @@ createPage(_myQuotation.default);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _modifyAddress = _interopRequireDefault(__webpack_require__(/*! ./pages/modify-address/modify-address.vue */ 180));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _modifyAddress = _interopRequireDefault(__webpack_require__(/*! ./pages/modify-address/modify-address.vue */ 164));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_modifyAddress.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
 
-/***/ 187:
-/*!*****************************************************************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/main.js?{"page":"pages%2Fadd-address%2Fadd-address"} ***!
-  \*****************************************************************************************/
+/***/ 171:
+/*!***********************************************************************************************************************!*\
+  !*** C:/Users/Shinelon/Documents/HBuilderProjects/jiuWanJiuQian/main.js?{"page":"pages%2Fadd-address%2Fadd-address"} ***!
+  \***********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1805,16 +1771,50 @@ createPage(_modifyAddress.default);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _addAddress = _interopRequireDefault(__webpack_require__(/*! ./pages/add-address/add-address.vue */ 188));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _addAddress = _interopRequireDefault(__webpack_require__(/*! ./pages/add-address/add-address.vue */ 172));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_addAddress.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
 
+/***/ 179:
+/*!***********************************************************************************************************************************!*\
+  !*** C:/Users/Shinelon/Documents/HBuilderProjects/jiuWanJiuQian/main.js?{"page":"pages%2Fmerchants-whosell%2Fmerchants-whosell"} ***!
+  \***********************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _merchantsWhosell = _interopRequireDefault(__webpack_require__(/*! ./pages/merchants-whosell/merchants-whosell.vue */ 180));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_merchantsWhosell.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 187:
+/*!*******************************************************************************************************!*\
+  !*** C:/Users/Shinelon/Documents/HBuilderProjects/jiuWanJiuQian/main.js?{"page":"pages%2Fvip%2Fvip"} ***!
+  \*******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _vip = _interopRequireDefault(__webpack_require__(/*! ./pages/vip/vip.vue */ 188));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_vip.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
 /***/ 19:
-/*!***************************************************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/main.js?{"page":"pages%2Fwode%2Fwode"} ***!
-  \***************************************************************************/
+/*!*********************************************************************************************************!*\
+  !*** C:/Users/Shinelon/Documents/HBuilderProjects/jiuWanJiuQian/main.js?{"page":"pages%2Fwode%2Fwode"} ***!
+  \*********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1829,9 +1829,9 @@ createPage(_wode.default);
 /***/ }),
 
 /***/ 195:
-/*!*****************************************************************************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/main.js?{"page":"pages%2Fmerchants-whosell%2Fmerchants-whosell"} ***!
-  \*****************************************************************************************************/
+/*!*************************************************************************************************************************!*\
+  !*** C:/Users/Shinelon/Documents/HBuilderProjects/jiuWanJiuQian/main.js?{"page":"pages%2FchangeAdress%2FchangeAdress"} ***!
+  \*************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1839,8 +1839,8 @@ createPage(_wode.default);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _merchantsWhosell = _interopRequireDefault(__webpack_require__(/*! ./pages/merchants-whosell/merchants-whosell.vue */ 196));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_merchantsWhosell.default);
+var _changeAdress = _interopRequireDefault(__webpack_require__(/*! ./pages/changeAdress/changeAdress.vue */ 196));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_changeAdress.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
@@ -7313,7 +7313,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7334,14 +7334,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7417,7 +7417,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -7795,9 +7795,9 @@ internalMixin(Vue);
 /***/ }),
 
 /***/ 203:
-/*!*************************************************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/main.js?{"page":"pages%2Fvip%2Fvip"} ***!
-  \*************************************************************************/
+/*!***********************************************************************************************************************************!*\
+  !*** C:/Users/Shinelon/Documents/HBuilderProjects/jiuWanJiuQian/main.js?{"page":"pages%2FVerificationPhone%2FVerificationPhone"} ***!
+  \***********************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7805,50 +7805,16 @@ internalMixin(Vue);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _vip = _interopRequireDefault(__webpack_require__(/*! ./pages/vip/vip.vue */ 204));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_vip.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-
-/***/ 211:
-/*!*******************************************************************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/main.js?{"page":"pages%2FchangeAdress%2FchangeAdress"} ***!
-  \*******************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _changeAdress = _interopRequireDefault(__webpack_require__(/*! ./pages/changeAdress/changeAdress.vue */ 212));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_changeAdress.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-
-/***/ 219:
-/*!*****************************************************************************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/main.js?{"page":"pages%2FVerificationPhone%2FVerificationPhone"} ***!
-  \*****************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _VerificationPhone = _interopRequireDefault(__webpack_require__(/*! ./pages/VerificationPhone/VerificationPhone.vue */ 220));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _VerificationPhone = _interopRequireDefault(__webpack_require__(/*! ./pages/VerificationPhone/VerificationPhone.vue */ 204));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_VerificationPhone.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
 
-/***/ 227:
-/*!***********************************************************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/main.js?{"page":"pages%2Fopenshop%2Fopenshop"} ***!
-  \***********************************************************************************/
+/***/ 211:
+/*!*****************************************************************************************************************!*\
+  !*** C:/Users/Shinelon/Documents/HBuilderProjects/jiuWanJiuQian/main.js?{"page":"pages%2Fopenshop%2Fopenshop"} ***!
+  \*****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7856,16 +7822,16 @@ createPage(_VerificationPhone.default);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _openshop = _interopRequireDefault(__webpack_require__(/*! ./pages/openshop/openshop.vue */ 228));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _openshop = _interopRequireDefault(__webpack_require__(/*! ./pages/openshop/openshop.vue */ 212));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_openshop.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
 
-/***/ 235:
-/*!*********************************************************************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/main.js?{"page":"pages%2FmerchantsNext%2FmerchantsNext"} ***!
-  \*********************************************************************************************/
+/***/ 219:
+/*!***************************************************************************************************************************!*\
+  !*** C:/Users/Shinelon/Documents/HBuilderProjects/jiuWanJiuQian/main.js?{"page":"pages%2FmerchantsNext%2FmerchantsNext"} ***!
+  \***************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7873,16 +7839,16 @@ createPage(_openshop.default);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _merchantsNext = _interopRequireDefault(__webpack_require__(/*! ./pages/merchantsNext/merchantsNext.vue */ 236));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _merchantsNext = _interopRequireDefault(__webpack_require__(/*! ./pages/merchantsNext/merchantsNext.vue */ 220));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_merchantsNext.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
 
-/***/ 243:
-/*!*****************************************************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/main.js?{"page":"pages%2Fshare%2Fshare"} ***!
-  \*****************************************************************************/
+/***/ 227:
+/*!***********************************************************************************************************!*\
+  !*** C:/Users/Shinelon/Documents/HBuilderProjects/jiuWanJiuQian/main.js?{"page":"pages%2Fshare%2Fshare"} ***!
+  \***********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7890,16 +7856,16 @@ createPage(_merchantsNext.default);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _share = _interopRequireDefault(__webpack_require__(/*! ./pages/share/share.vue */ 244));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _share = _interopRequireDefault(__webpack_require__(/*! ./pages/share/share.vue */ 228));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_share.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
 
-/***/ 251:
-/*!***********************************************************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/main.js?{"page":"pages%2Fdividend%2Fdividend"} ***!
-  \***********************************************************************************/
+/***/ 235:
+/*!*****************************************************************************************************************!*\
+  !*** C:/Users/Shinelon/Documents/HBuilderProjects/jiuWanJiuQian/main.js?{"page":"pages%2Fdividend%2Fdividend"} ***!
+  \*****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7907,16 +7873,16 @@ createPage(_share.default);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _dividend = _interopRequireDefault(__webpack_require__(/*! ./pages/dividend/dividend.vue */ 252));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _dividend = _interopRequireDefault(__webpack_require__(/*! ./pages/dividend/dividend.vue */ 236));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_dividend.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
 
-/***/ 264:
-/*!**************************************************************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/components/mpvue-citypicker/city-data/province.js ***!
-  \**************************************************************************************/
+/***/ 255:
+/*!********************************************************************************************************************!*\
+  !*** C:/Users/Shinelon/Documents/HBuilderProjects/jiuWanJiuQian/components/mpvue-citypicker/city-data/province.js ***!
+  \********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8063,10 +8029,10 @@ provinceData;exports.default = _default;
 
 /***/ }),
 
-/***/ 265:
-/*!**********************************************************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/components/mpvue-citypicker/city-data/city.js ***!
-  \**********************************************************************************/
+/***/ 256:
+/*!****************************************************************************************************************!*\
+  !*** C:/Users/Shinelon/Documents/HBuilderProjects/jiuWanJiuQian/components/mpvue-citypicker/city-data/city.js ***!
+  \****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9577,10 +9543,10 @@ cityData;exports.default = _default;
 
 /***/ }),
 
-/***/ 266:
-/*!**********************************************************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/components/mpvue-citypicker/city-data/area.js ***!
-  \**********************************************************************************/
+/***/ 257:
+/*!****************************************************************************************************************!*\
+  !*** C:/Users/Shinelon/Documents/HBuilderProjects/jiuWanJiuQian/components/mpvue-citypicker/city-data/area.js ***!
+  \****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22131,9 +22097,9 @@ areaData;exports.default = _default;
 /***/ }),
 
 /***/ 27:
-/*!*******************************************************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/main.js?{"page":"pages%2Fsousuo%2Fsousuo"} ***!
-  \*******************************************************************************/
+/*!*************************************************************************************************************!*\
+  !*** C:/Users/Shinelon/Documents/HBuilderProjects/jiuWanJiuQian/main.js?{"page":"pages%2Fsousuo%2Fsousuo"} ***!
+  \*************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22179,9 +22145,9 @@ module.exports = g;
 /***/ }),
 
 /***/ 35:
-/*!***********************************************************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/main.js?{"page":"pages%2Fshaixuan%2Fshaixuan"} ***!
-  \***********************************************************************************/
+/*!*****************************************************************************************************************!*\
+  !*** C:/Users/Shinelon/Documents/HBuilderProjects/jiuWanJiuQian/main.js?{"page":"pages%2Fshaixuan%2Fshaixuan"} ***!
+  \*****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22196,9 +22162,9 @@ createPage(_shaixuan.default);
 /***/ }),
 
 /***/ 4:
-/*!***********************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/pages.json ***!
-  \***********************************************/
+/*!*****************************************************************************!*\
+  !*** C:/Users/Shinelon/Documents/HBuilderProjects/jiuWanJiuQian/pages.json ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22208,9 +22174,9 @@ createPage(_shaixuan.default);
 /***/ }),
 
 /***/ 43:
-/*!*************************************************************************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/main.js?{"page":"pages%2Fqiugouxiangqing%2Fqiugouxiangqing"} ***!
-  \*************************************************************************************************/
+/*!*******************************************************************************************************************************!*\
+  !*** C:/Users/Shinelon/Documents/HBuilderProjects/jiuWanJiuQian/main.js?{"page":"pages%2Fqiugouxiangqing%2Fqiugouxiangqing"} ***!
+  \*******************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22225,9 +22191,9 @@ createPage(_qiugouxiangqing.default);
 /***/ }),
 
 /***/ 51:
-/*!***************************************************************************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/main.js?{"page":"pages%2Fqiugouxiangqing2%2Fqiugouxiangqing2"} ***!
-  \***************************************************************************************************/
+/*!*********************************************************************************************************************!*\
+  !*** C:/Users/Shinelon/Documents/HBuilderProjects/jiuWanJiuQian/main.js?{"page":"pages%2Fbaojiabiao%2Fbaojiabiao"} ***!
+  \*********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22235,33 +22201,16 @@ createPage(_qiugouxiangqing.default);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _qiugouxiangqing = _interopRequireDefault(__webpack_require__(/*! ./pages/qiugouxiangqing2/qiugouxiangqing2.vue */ 52));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_qiugouxiangqing.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-
-/***/ 59:
-/*!***************************************************************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/main.js?{"page":"pages%2Fbaojiabiao%2Fbaojiabiao"} ***!
-  \***************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _baojiabiao = _interopRequireDefault(__webpack_require__(/*! ./pages/baojiabiao/baojiabiao.vue */ 60));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _baojiabiao = _interopRequireDefault(__webpack_require__(/*! ./pages/baojiabiao/baojiabiao.vue */ 52));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_baojiabiao.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
 
-/***/ 67:
-/*!***************************************************************************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/main.js?{"page":"pages%2Fbiaojiachenggong%2Fbiaojiachenggong"} ***!
-  \***************************************************************************************************/
+/***/ 59:
+/*!*********************************************************************************************************************************!*\
+  !*** C:/Users/Shinelon/Documents/HBuilderProjects/jiuWanJiuQian/main.js?{"page":"pages%2Fbiaojiachenggong%2Fbiaojiachenggong"} ***!
+  \*********************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22269,16 +22218,16 @@ createPage(_baojiabiao.default);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _biaojiachenggong = _interopRequireDefault(__webpack_require__(/*! ./pages/biaojiachenggong/biaojiachenggong.vue */ 68));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _biaojiachenggong = _interopRequireDefault(__webpack_require__(/*! ./pages/biaojiachenggong/biaojiachenggong.vue */ 60));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_biaojiachenggong.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
 
-/***/ 75:
-/*!*******************************************************************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/main.js?{"page":"pages%2Fshouhuodizhi%2Fshouhuodizhi"} ***!
-  \*******************************************************************************************/
+/***/ 67:
+/*!*************************************************************************************************************************!*\
+  !*** C:/Users/Shinelon/Documents/HBuilderProjects/jiuWanJiuQian/main.js?{"page":"pages%2Fshouhuodizhi%2Fshouhuodizhi"} ***!
+  \*************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22286,16 +22235,16 @@ createPage(_biaojiachenggong.default);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _shouhuodizhi = _interopRequireDefault(__webpack_require__(/*! ./pages/shouhuodizhi/shouhuodizhi.vue */ 76));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _shouhuodizhi = _interopRequireDefault(__webpack_require__(/*! ./pages/shouhuodizhi/shouhuodizhi.vue */ 68));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_shouhuodizhi.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
 
-/***/ 83:
-/*!*****************************************************************************************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/main.js?{"page":"pages%2Fpurchase-classification%2Fpurchase-classification"} ***!
-  \*****************************************************************************************************************/
+/***/ 75:
+/*!***********************************************************************************************************************************************!*\
+  !*** C:/Users/Shinelon/Documents/HBuilderProjects/jiuWanJiuQian/main.js?{"page":"pages%2Fpurchase-classification%2Fpurchase-classification"} ***!
+  \***********************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22303,16 +22252,16 @@ createPage(_shouhuodizhi.default);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _purchaseClassification = _interopRequireDefault(__webpack_require__(/*! ./pages/purchase-classification/purchase-classification.vue */ 84));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _purchaseClassification = _interopRequireDefault(__webpack_require__(/*! ./pages/purchase-classification/purchase-classification.vue */ 76));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_purchaseClassification.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
 
-/***/ 91:
-/*!***************************************************************************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/main.js?{"page":"pages%2Fadditional-items%2Fadditional-items"} ***!
-  \***************************************************************************************************/
+/***/ 83:
+/*!*********************************************************************************************************************************!*\
+  !*** C:/Users/Shinelon/Documents/HBuilderProjects/jiuWanJiuQian/main.js?{"page":"pages%2Fadditional-items%2Fadditional-items"} ***!
+  \*********************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22320,16 +22269,16 @@ createPage(_purchaseClassification.default);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _additionalItems = _interopRequireDefault(__webpack_require__(/*! ./pages/additional-items/additional-items.vue */ 92));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _additionalItems = _interopRequireDefault(__webpack_require__(/*! ./pages/additional-items/additional-items.vue */ 84));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_additionalItems.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
 
-/***/ 99:
-/*!*****************************************************************************************!*\
-  !*** C:/Users/Shinelon/Desktop/买吧/main.js?{"page":"pages%2Fmy-purchase%2Fmy-purchase"} ***!
-  \*****************************************************************************************/
+/***/ 91:
+/*!***********************************************************************************************************************!*\
+  !*** C:/Users/Shinelon/Documents/HBuilderProjects/jiuWanJiuQian/main.js?{"page":"pages%2Fmy-purchase%2Fmy-purchase"} ***!
+  \***********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22337,8 +22286,25 @@ createPage(_additionalItems.default);
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _myPurchase = _interopRequireDefault(__webpack_require__(/*! ./pages/my-purchase/my-purchase.vue */ 100));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _myPurchase = _interopRequireDefault(__webpack_require__(/*! ./pages/my-purchase/my-purchase.vue */ 92));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 createPage(_myPurchase.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 99:
+/*!*****************************************************************************************************************************!*\
+  !*** C:/Users/Shinelon/Documents/HBuilderProjects/jiuWanJiuQian/main.js?{"page":"pages%2Frelease-notice%2Frelease-notice"} ***!
+  \*****************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _releaseNotice = _interopRequireDefault(__webpack_require__(/*! ./pages/release-notice/release-notice.vue */ 100));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_releaseNotice.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ })

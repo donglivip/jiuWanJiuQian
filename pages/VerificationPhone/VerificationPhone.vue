@@ -5,14 +5,14 @@
 		<view class="alert">如果您已有久万久千账号，请使用该账号绑定手机号进行关联</view>
 		<view class="phone-box">
 			<view class="phone-top">
-				<input type="number" value="" placeholder="请输入手机号" placeholder-class="qiugou" />
-				<view class="phone-btn">发送验证码</view>
+				<input type="number" placeholder="请输入手机号" placeholder-class="qiugou" v-model="phone" @input='phonechange'/>
+				<view class="phone-btn" @tap="sendcode()">{{time>=60?'发送验证码':time}}</view>
 			</view>
 			<view class="code-box">
-				<input type="number" value="" />
-				<input type="number" value="" />
-				<input type="number" value="" />
-				<input type="number" value="" />
+				<input type="number" v-model="code01" maxlength=1/>
+				<input type="number" v-model="code02" maxlength=1  :focus="code01!=''&&code02==''"/>
+				<input type="number" v-model="code03" maxlength=1  :focus="code02!=''&&code03==''"/>
+				<input type="number" v-model="code04" maxlength=1 :focus="code03!=''&&code04==''"/>
 			</view>
 		</view>
 		<view class="bottom">
@@ -33,10 +33,109 @@
 export default {
 	data() {
 		return {
-			checksate: 1
+			checksate: 1, //是否同意声明 
+			phone :'', //手机号
+			ajaxcode:'',//后台拿到的验证码
+			code01:'',  //验证码1234
+			code02:'',
+			code03:'',
+			code04:'',
+			time:60, //倒计时时间
 		};
 	},
 	methods: {
+		phonechange:function(){
+			if(this.ajaxcode!=''){
+				uni.showToast({
+					title:'手机号变化,请重新获取验证码!',
+					icon:'none'
+				})
+				this.ajaxcode=''
+				this.time=61
+			}
+		},
+		// 提交绑定
+		submit:function(){
+			if(this.checksate==0){
+				uni.showToast({
+					title:'请先同意严禁发布规则声明',
+					icon:'none'
+				})
+				return false; 
+			}
+			if(this.ajaxcode==''){
+				uni.showToast({
+					title:'请先获取验证码',
+					icon:'none'
+				})
+				return false; 
+			}
+			if(this.ajaxcode!=(this.code01+this.code02+this.code03+this.code04)){
+				uni.showToast({
+					title:'验证码错误',
+					icon:'none'
+				})
+				return false; 
+			}
+			uni.request({
+			    url: 'https://www.example.com/request', 
+			    data: {
+			        text: 'uni.request'
+			    },
+			    success: (res) => {
+			        this.ajaxcode = res.data
+					uni.showToast({
+						title:'手机号绑定成功'
+					})
+			    }
+			});
+		},
+		// 倒计时
+		setinter:function(){
+			var that=this
+			if(this.time>0&&this.time<=60){
+				this.time--
+				setTimeout(function(){
+					that.setinter()
+				},1000)
+			}else{
+				this.time=60
+			}
+			
+		},
+		// 发送验证码
+		sendcode:function(){
+			var that=this
+			if(this.time!=60){
+				uni.showToast({
+					title:'操作频繁',
+					icon:'none'
+				})
+				return false; 
+			}
+			if(!(/^1[3456789]\d{9}$/.test(that.phone))){
+			 uni.showToast({
+			 	title:'手机号格式错误',
+				icon:'none'
+			 })
+			 return false; 
+			} 
+			uni.request({
+			    url: 'https://www.example.com/request', 
+			    data: {
+			        text: 'uni.request'
+			    },
+			    success: (res) => {
+			        this.ajaxcode = res.data
+					uni.showToast({
+						title:'验证码已发送'
+					})
+			    }
+			});
+			this.time=60
+			this.setinter()
+		},
+		// 同意阅读声明
 		changecheck:function(index){
 			this.checksate=index
 		}

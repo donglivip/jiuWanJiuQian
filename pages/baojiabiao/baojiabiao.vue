@@ -81,7 +81,11 @@
 				</view>
 			</view>			
 		</scroll-view>
-		<view class="bottom" @tap="opennew('biaojiachenggong')">提交</view>
+		<view class="bottom" @tap="opennew('biaojiachenggong')" v-if="!isbao">提交</view>
+		<view class="bottom center" @tap="opennew('biaojiachenggong')" v-if="isbao">
+			<text class="title">修改报价</text>
+			<text class="text">仅1次修改机会，请慎重使用</text>
+		</view>
 	</view>
 </template>
 
@@ -89,21 +93,54 @@
 	export default {
 		data() {
 			return {
-				opennew:function(id){
-					uni.navigateTo({
-						url: '../'+id+'/'+id
-					});
-					
-				}
+				isbao:true, //是否已报价
 			}
 		},
 		methods: {
-			
+			// 初始化数据
+			myajax:function(){
+				var that=this
+				uni.showLoading({
+				    title: '加载中',
+					mask:true
+				});
+				uni.request({
+				    url: 'https://www.example.com/request', //仅为示例，并非真实接口地址。
+				    data: {
+				        text: 'uni.request'
+				    },
+				    success: (res) => {
+				        console.log(res.data);
+						that.mydata=res.data
+				    }
+				});
+				setTimeout(function() {
+					uni.hideLoading()
+				}, 1000);
+			},
+			// 打开新页面
+			opennew:function(id){
+				uni.navigateTo({
+					url: '../'+id+'/'+id
+				});
+				
+			}
+		},
+		onShow:function(){
+			this.myajax()
 		}
 	}
 </script>
 
 <style>
+	.text{
+		font-size: 24rpx;
+	}
+	.center{
+		background: #008A05!important;
+		color: #FFFFFF;
+		flex-direction: column;
+	}
 .wrapper,uni-page-body, uni-page-refresh,page{
 		background: #F9F9F9;height: 100%;overflow: hidden;
 	}

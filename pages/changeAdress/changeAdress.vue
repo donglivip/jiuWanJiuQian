@@ -59,7 +59,31 @@ export default {
 			detail:'绿地世纪城绿地世纪城绿地世纪城'
 		};
 	},
+	onShow:function(){
+		this.myajax()
+	},
 	methods: {
+		// 初始化数据
+		myajax:function(){
+			var that=this
+			uni.showLoading({
+			    title: '加载中',
+				mask:true
+			});
+			uni.request({
+			    url: 'https://www.example.com/request', //仅为示例，并非真实接口地址。
+			    data: {
+			        text: 'uni.request'
+			    },
+			    success: (res) => {
+			        console.log(res.data);
+					that.mydata=res.data
+			    }
+			});
+			setTimeout(function() {
+				uni.hideLoading()
+			}, 1000);
+		},
 		onCancel(e) {
 			// 点击取消事件
 			// alert('取消')

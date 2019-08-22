@@ -1,14 +1,16 @@
 <template>
-	<scroll-view class="wrapper" scroll-y="">
+	<scroll-view class="wrapper" scroll-y="" @scrolltolower='myajax()'>
 		<view class="main">
 			<view class="main-one">
 				<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/qianback.png" mode="" class="back"></image>
 				<view class="one-box">
 					<view class="one-text">868.00</view>
 					<view class="one-news">￥余额</view>
-					<view class="one-x" @tap="opennew('cash-withdrawal')">
-						<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/suo.png" mode=""></image>
-						<view class="one-word">提现</view>
+					 <!-- @tap="opennew('cash-withdrawal')" -->
+					<view class="one-x">
+						<!-- <image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/suo.png" mode=""></image>
+						<view class="one-word">提现</view> -->
+						<view class="one-word">移动端暂不支持提现,请点击<text class="url" @tap="gourl">www.9w9q.cn</text>提现。</view>
 					</view>
 				</view>
 			</view>
@@ -96,30 +98,60 @@
 <script>
 export default {
 	data() {
-		return {};
+		return {
+			pageNum:0, //当前页数
+			mydata:[],  //收支记录数组
+		};
 	},
 	methods: {
 		opennew: function(id) {
 			uni.navigateTo({
 				url: '../' + id + '/' + id
 			});
+		},
+		gourl:function(){
+			uni.setClipboardData({
+			    data: 'www.9w9q.cn',
+			    success: function () {
+			       
+			    }
+			});
+		},
+		// 初始化数据
+		myajax:function(){
+			var that=this
+			this.pageNum++
+			uni.showLoading({
+			    title: '加载中',
+				mask:true
+			});
+			uni.request({
+			    url: 'https://www.example.com/request', //仅为示例，并非真实接口地址。
+			    data: {
+			        text: 'uni.request'
+			    },
+			    success: (res) => {
+			        console.log(res.data);
+					that.mydata.push(res.data)
+			    }
+			});
+			setTimeout(function() {
+				uni.hideLoading()
+			}, 1000);
 		}
 	},
-	// 下拉刷新
-	onPullDownRefresh() {
-		console.log('refresh');
-		setTimeout(function() {
-			uni.stopPullDownRefresh();
-		}, 1000);
-	},
-	// 上拉加载
-	onReachBottom: function() {
-		console.log('xia');
+	onShow:function(){
+		this.pageNum=0
+		this.mydata=[]
+		this.myajax()
 	}
 };
 </script>
 
 <style>
+	.url{
+		color: #008a05;
+	}
 .wrapper {
 	background: #f9f9f9;
 }

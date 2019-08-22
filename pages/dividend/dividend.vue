@@ -185,10 +185,32 @@
 export default {
 	data() {
 		return {
-			pro:'67.4%'
+			pro:'67.4%',
+			mydata:[]
 		};
 	},
 	methods: {
+		// 初始化数据
+		myajax:function(){
+			var that=this
+			uni.showLoading({
+			    title: '加载中',
+				mask:true
+			});
+			uni.request({
+			    url: 'https://www.example.com/request', //仅为示例，并非真实接口地址。
+			    data: {
+			        text: 'uni.request'
+			    },
+			    success: (res) => {
+			        console.log(res.data);
+					that.mydata=res.data
+			    }
+			});
+			setTimeout(function() {
+				uni.hideLoading()
+			}, 1000);
+		},
 		opennew:function(id){
 			uni.navigateTo({
 				url: '../'+id+'/'+id
@@ -199,6 +221,9 @@ export default {
 				url: '../'+id+'/'+id
 			});
 		}
+	},
+	onLoad:function(){
+		this.myajax()
 	}
 };
 </script>

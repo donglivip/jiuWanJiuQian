@@ -75,8 +75,10 @@ input::-webkit-input-placeholder{font-size: .12rpx;}
 }
 .one-left{
 	font-size: 28rpx;
-	color: #008A05;
 	font-weight: 600;
+}
+.one-active{
+	color: #008A05;
 }
 .one-content{
 	display: -webkit-box;
