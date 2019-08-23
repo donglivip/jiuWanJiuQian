@@ -1,9 +1,10 @@
 <script>
 export default {
 	globalData: {
-		byurl: 'http://192.168.0.200:7002' //买家api
+		byurl: 'http://192.168.0.200:4001', //买家api
 	},
 	onLaunch: function() {
+		// getApp().globalData.text
 		// 微信小程序在线升级
 		// #ifdef MP-WEIXIN
 		const updateManager = uni.getUpdateManager();

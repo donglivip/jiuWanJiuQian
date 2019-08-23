@@ -2,7 +2,7 @@
 	<scroll-view class="wrapper" scroll-y="">
 		<view class="header"><image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/fabu-wupin.png" mode=""></image></view>
 		<view class="main">
-			<view class="main-one" @tap="opennew('shouhuodizhi')">
+			<view class="main-one" @tap="opennew('shouhuodizhi')" v-if="adressdata.length!=0">
 				<view class="main-top">
 					<view class="m-top">
 						<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/dingwei.png" mode=""></image>
@@ -16,6 +16,15 @@
 				<view class="one-box">
 					<view class="main-content">收货地址：江苏省徐州市鼓楼区丰财街道徐州市鼓楼区下淀小学东隔壁（白云山北）</view>
 					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/you2.png" mode=""></image>
+				</view>
+				<view class="one-bottom"><image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/xiahuaxian.png"></image></view>
+			</view>
+			<view class="main-one" @tap="opennew('shouhuodizhi')" v-if="adressdata.length==0">
+				<view class="main-top">
+					<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/dingwei2.png" mode="" class="adressimg"></image>
+				</view>
+				<view class="one-box">
+					<view class="main-content tcenter"style="height: auto;padding: 0;">请选择联系人及收货地址</view>
 				</view>
 				<view class="one-bottom"><image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/xiahuaxian.png"></image></view>
 			</view>
@@ -223,9 +232,16 @@ export default {
 		},
 		//跳转页面
 		opennew: function(id) {
-			uni.navigateTo({
-				url: '../' + id + '/' + id
-			});
+			if(uni.getStorageSync('userid')==''){
+				uni.showToast({
+					title:'请先进行登陆',
+					icon:'none'
+				})
+			}else{
+				uni.navigateTo({
+					url: '../' + id + '/' + id
+				});
+			}
 		},
 		//点击展开更多默认选项 展示下面内容
 		moren: function() {
@@ -328,6 +344,12 @@ export default {
 </script>
 
 <style>
+	.adressimg{
+		height: 50rpx;
+		width: 50rpx;
+		display: block;
+		margin: 0 auto;
+	}
 .box {
 	background: #f9f9f9;
 }

@@ -167,12 +167,9 @@ export default {
 				uni.showModal({
 				    title: '温馨提示',
 				    content: '请先进行登陆',
+					showCancel:false,
 				    success: function (res) {
-				        if (res.confirm) {
-				            uni.navigateBack();
-				        } else if (res.cancel) {
-				            console.log('用户点击取消');
-				        }
+				        uni.navigateBack()
 				    }
 				});
 				return
@@ -188,14 +185,22 @@ export default {
 						    provider: 'alipay',
 						    orderInfo: 'orderInfo', //微信、支付宝订单数据
 						    success: function (res) {
-						        console.log('success:' + JSON.stringify(res));
+						        uni.showModal({
+						            title: '支付成功',
+						            content: '会员已开通,欢迎您的加入.',
+						        	showCancel:false
+						        });
 						    },
 						    fail: function (err) {
-						        console.log('fail:' + JSON.stringify(err));
+								uni.showModal({
+								    title: '支付失败',
+								    content: '错误信息'+JSON.stringify(err),
+									showCancel:false
+								});
 						    }
 						});
 					}else{
-						// 微信小程序支付
+						// 微信支付
 						uni.requestPayment({
 						    provider: 'wxpay',
 						    timeStamp: String(Date.now()),
@@ -204,10 +209,18 @@ export default {
 						    signType: 'MD5',
 						    paySign: '',
 						    success: function (res) {
-						        console.log('success:' + JSON.stringify(res));
+						        uni.showModal({
+						            title: '支付成功',
+						            content: '会员已开通,欢迎您的加入.',
+						        	showCancel:false
+						        });
 						    },
 						    fail: function (err) {
-						        console.log('fail:' + JSON.stringify(err));
+						       uni.showModal({
+						           title: '支付失败',
+						           content: '错误信息'+JSON.stringify(err),
+								   showCancel:false
+						       });
 						    }
 						});
 					}
@@ -228,10 +241,18 @@ export default {
 			    signType: 'MD5',
 			    paySign: '',
 			    success: function (res) {
-			        console.log('success:' + JSON.stringify(res));
+			        uni.showModal({
+			            title: '支付成功',
+			            content: '会员已开通,欢迎您的加入.',
+			        	showCancel:false
+			        });
 			    },
 			    fail: function (err) {
-			        console.log('fail:' + JSON.stringify(err));
+			        uni.showModal({
+			            title: '支付失败',
+			            content: '错误信息'+JSON.stringify(err),
+			        	showCancel:false
+			        });
 			    }
 			});
 			// #endif

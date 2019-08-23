@@ -39,7 +39,7 @@
 				</view>
 				<view class="header-bottom">
 					<view class="b-text">报价剩余时间</view>
-					<view class="b-news">
+					<view class="b-news" v-if="timshow">
 						<uni-countdown
 							color="#FFFFFF"
 							background-color="#008A05"
@@ -190,7 +190,8 @@ export default {
 			ri:0,
 			shi:0,
 			fen:0,
-			miao:0
+			miao:0,
+			timshow:false
 		};
 	},
 	methods: {
@@ -268,6 +269,7 @@ export default {
 				returnStr = days + '天' + returnStr;
 				this.ri=days
 			}
+			this.timshow=true
 			console.log(returnStr)
 			return returnStr;
 		}

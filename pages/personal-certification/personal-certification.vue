@@ -6,11 +6,11 @@
 				<view class="main-x"> 为增加产品及采供信息曝光度，建议商家使用“企业认证”</view>
 				<view class="box-top">
 					<view class="box-text"><text>*</text>姓名</view>
-					<input type="text" value="" placeholder="请输入姓名" placeholder-class="qiugou"/>
+					<input type="text" placeholder="请输入姓名" placeholder-class="qiugou" v-model="uname"/>
 				</view>
 				<view class="box-top">
 					<view class="box-text"><text>*</text>身份证号码</view>
-					<input type="idcard" value="" placeholder="请输入身份证号码" placeholder-class="qiugou"/>
+					<input type="idcard"  placeholder="请输入身份证号码" placeholder-class="qiugou" v-model="ucard"/>
 				</view>
 			</view>
 		</view>
@@ -22,10 +22,38 @@
 	export default {
 		data() {
 			return {
-				
+				uname:'', //用户名
+				ucard:'', //用户身份证号
 			}
 		},
 		methods: {
+			gosubmit:function(){
+				// 正则表达式：
+				var idcardReg = /^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$|^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/;
+				if(!(idcardReg.test(this.ucard))) {
+				    uni.showToast({
+				    	title:'身份证号格式错误',
+						icon:'none'
+				    })
+					return
+				}
+				if(this.uname==''){
+					uni.showToast({
+						title:'用户名不能为空',
+						icon:'none'
+					})
+					return
+				}
+				// 提交认证
+				uni.request({
+					url: '',
+					method: 'GET',
+					data: {},
+					success: res => {},
+					fail: () => {},
+					complete: () => {}
+				});
+			},
 			opennew:function(id){
 				uni.navigateTo({
 					url: '../'+id+'/'+id

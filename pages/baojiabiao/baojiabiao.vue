@@ -42,7 +42,7 @@
 					</view>
 					<view class="one-bottom">
 						<view class="b-text">报价金额</view>
-						<input type="text" value="" placeholder="请输入报价金额" placeholder-class="input"/>
+						<input type="number" value="" placeholder="请输入报价金额" placeholder-class="input"/>
 					</view>
 				</view>
 				<view class="main-one">
@@ -59,7 +59,7 @@
 					</view>
 					<view class="one-bottom">
 						<view class="b-text">报价金额</view>
-						<input type="text" value="" placeholder="请输入报价金额" placeholder-class="input"/>
+						<input type="number" value="" placeholder="请输入报价金额" placeholder-class="input"/>
 					</view>
 				</view>
 				<view class="main-one">
@@ -76,7 +76,7 @@
 					</view>
 					<view class="one-bottom">
 						<view class="b-text">报价金额</view>
-						<input type="text" value="" placeholder="请输入报价金额" placeholder-class="input"/>
+						<input type="number" value="" placeholder="请输入报价金额" placeholder-class="input"/>
 					</view>
 				</view>
 			</view>			

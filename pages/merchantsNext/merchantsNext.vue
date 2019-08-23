@@ -26,28 +26,28 @@
 							<text>*</text>
 							店铺名称
 						</view>
-						<input type="text" value="" placeholder="请填写店铺名称" placeholder-class="qiugou" />
+						<input type="text" placeholder="请填写店铺名称" placeholder-class="qiugou" v-model="name"/>
 					</view>
 					<view class="e-top">
 						<view class="e-text">
 							<text>*</text>
 							客服QQ
 						</view>
-						<input type="number" value="" placeholder="请填写客服QQ号码" placeholder-class="qiugou" />
+						<input type="number" placeholder="请填写客服QQ号码" placeholder-class="qiugou" v-model="qq"/>
 					</view>
 					<view class="e-top">
 						<view class="e-text">
 							<text>*</text>
 							联系人
 						</view>
-						<input type="text" value="" placeholder="请输入联系人姓名" placeholder-class="qiugou" />
+						<input type="text" placeholder="请输入联系人姓名" placeholder-class="qiugou" v-model="uname"/>
 					</view>
 					<view class="e-top">
 						<view class="e-text">
 							<text>*</text>
 							联系电话
 						</view>
-						<input type="number" value="" placeholder="请填写店铺联系电话" placeholder-class="qiugou" />
+						<input type="number" placeholder="请填写店铺联系电话" placeholder-class="qiugou" v-model="phone"/>
 					</view>
 					<view class="e-top" @tap="showAction">
 						<view class="e-text">
@@ -69,10 +69,52 @@ export default {
 	data() {
 		return {
 			navdata:['分类1', '分类2', '分类3'],
-			navindex:-1
+			navindex:-1,
+			name:'', //店铺名称
+			qq:'', //店铺qq
+			uname:'', //联系人
+			phone:'',//联系电话
 		};
 	},
 	methods: {
+		gosubmit:function(){
+			// 提交
+			if(!(/^1[3456789]\d{9}$/.test(this.phone))){ 
+				uni.showToast({
+					title:'手机号格式错误',
+					icon:'none'
+				})
+			} else if(this.name==''){
+				uni.showToast({
+					title:'店铺名称不能为空',
+					icon:'none'
+				})
+			}else if(this.qq==''){
+				uni.showToast({
+					title:'店铺qq不能为空',
+					icon:'none'
+				})
+			}else if(this.uname==''){
+				uni.showToast({
+					title:'店铺联系人不能为空',
+					icon:'none'
+				})
+			}else if(this.navindex==-1){
+				uni.showToast({
+					title:'经营类目不能为空',
+					icon:'none'
+				})
+			}else{
+				uni.request({
+					url: '',
+					method: 'GET',
+					data: {},
+					success: res => {},
+					fail: () => {},
+					complete: () => {}
+				});
+			}
+		},
 		back:function(){
 			// 返回上一页
 			uni.navigateBack()
@@ -85,6 +127,7 @@ export default {
 				url: '../' + id + '/' + id
 			});
 		},
+		// 显示类目列表
 		showAction:function(){
 			var that=this
 			uni.showActionSheet({

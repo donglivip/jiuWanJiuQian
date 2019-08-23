@@ -14,7 +14,7 @@
 				<view class="c-text">点击登录</view>
 				<view class="c-news"></view>
 			</view>
-			<view class="header-right" @tap="useropen('openshop')">
+			<view class="header-right" @tap="opennew('openshop')">
 				<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/logo.png" mode=""></image>
 				<view class="h-text">0元开店</view>
 			</view>
@@ -96,7 +96,8 @@ export default {
 			logintype: false, //登陆面板显示
 			userid: uni.getStorageSync('userid'), //用户ID
 			username: uni.getStorageSync('username'), //用户名
-			useravatar: uni.getStorageSync('useravatar') //用户头像
+			useravatar: uni.getStorageSync('useravatar'), //用户头像
+			openid:'',//openid
 		};
 	},
 	methods: {
@@ -136,8 +137,7 @@ export default {
 							uni.setStorageSync('useravatar', infoRes.userInfo.avatarUrl);
 							// 如果是+app直接获取openid
 							// #ifdef APP-PLUS
-							that.userid = infoRes.userInfo.openId;
-							uni.setStorageSync('userid', infoRes.userInfo.openId);
+							that.openid= infoRes.userInfo.openId
 							// #endif
 							// 如果是小程序请求后台获取openid
 							// #ifdef  MP-WEIXIN
@@ -150,11 +150,20 @@ export default {
 									grant_type: 'authorization_code'
 								},
 								success: res => {
-									that.userid = res.data.openid;
-									uni.setStorageSync('userid', res.data.openid);
+									that.openid = res.data.openid;
 								}
 							});
 							// #endif
+							uni.request({
+								url: getApp().globalData.byurl + '/passport/connect/app/',
+								method: 'GET',
+								data: {
+									openid:that.openid
+								},
+								success: res => {},
+								fail: () => {},
+								complete: () => {}
+							});
 						}
 					});
 				}

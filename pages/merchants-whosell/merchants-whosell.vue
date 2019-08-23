@@ -40,7 +40,7 @@
 						<text>*</text>
 						企业名称
 					</view>
-					<input type="text" value="" placeholder="请输入企业完整名称" placeholder-class="qiugou" />
+					<input type="text" placeholder="请输入企业完整名称" placeholder-class="qiugou" v-model="qname"/>
 				</view>
 				<view class="box-cont">
 					<view class="box-news">
@@ -69,19 +69,19 @@
 							<text>*</text>
 							姓名
 						</view>
-						<input type="text" value="" placeholder="请输入姓名" placeholder-class="qiugou" />
+						<input type="text" value="" placeholder="请输入姓名" placeholder-class="qiugou" v-model="uname"/>
 					</view>
 					<view class="e-top">
 						<view class="e-text">
 							<text>*</text>
 							身份证号码
 						</view>
-						<input type="idcard" value="" placeholder="请输入身份证号码" placeholder-class="qiugou" />
+						<input type="idcard" placeholder="请输入身份证号码" placeholder-class="qiugou" v-model="ucard"/>
 					</view>
 				</view>
 			</view>
 		</scroll-view>
-		<view class="bottom" @tap="opennew('merchantsNext')" v-if="type == 0">提 交</view>
+		<view class="bottom" @tap="opennew('merchantsNext')" v-if="type==0">提 交</view>
 		<!-- 正在审核 -->
 		<div class="wrapper backwhite" v-if="type == 1">
 			<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/examine.png" mode="" class="examine-img"></image>
@@ -123,7 +123,10 @@ export default {
 		return {
 			myindex: 0, //0 企业 1 个人
 			type: 0,    // 认证状态
-			shopImg:''
+			shopImg:'', //营业执照照片
+			qname:'',   //企业名称
+			ucard:'',   //个人身份证号
+			uname:'',   //个人姓名
 		};
 	},
 	methods: {
@@ -154,6 +157,40 @@ export default {
 		},
 		// 打开新页面
 		opennew:function(id){
+			if(this.myindex==0){
+				// 企业
+				if(this.qname==''||this.shopImg==''){
+					uni.showToast({
+						title:'企业名称或营业执照不能为空',
+						icon:'none'
+					})
+					return
+				}
+			}else{
+				// 个人
+				if(this.ucard==''||this.uname==''){
+					uni.showToast({
+						title:'姓名或身份证号不能为空',
+						icon:'none'
+					})
+					return
+				}
+				// 正则表达式：
+				var idcardReg = /^[1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}$|^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/;
+				
+				if(!(idcardReg.test(this.ucard))) {
+				    // 合法
+					uni.showToast({
+						title:'身份证号格式错误',
+						icon:'none'
+					})
+					return
+				}
+			}
+			uni.setStorage({
+				 key: 'myindex',
+				 data: this.myindex
+			})
 			uni.navigateTo({
 				url: '../'+id+'/'+id
 			});

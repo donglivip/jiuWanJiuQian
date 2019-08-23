@@ -3,7 +3,7 @@
 		<scroll-view class="main" scroll-y="">
 			<view class="main-box">
 				<view class="main-top">
-					<view class="m-top">
+					<view class="m-top" @tap="godefault()">
 						<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/dingwei.png" mode=""></image>
 						<view class="m-text">李晓明</view>
 					</view>
@@ -80,6 +80,7 @@
 				</view>
 			</view>
 		</scroll-view>
+		
 		<view class="bottom" @tap="opennew('add-address')">
 			<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/baijia.png" mode=""></image>
 			<view class="bottom-text">添加地址</view>
@@ -95,6 +96,22 @@
 			}
 		},
 		methods: {
+			// 设置默认地址
+			godefault:function(id){
+				uni.request({
+				    url: 'https://www.example.com/request', //仅为示例，并非真实接口地址。
+				    data: {
+				        text: 'uni.request'
+				    },
+				    success: (res) => {
+						uni.showToast({
+							title:'修改成功',
+							icon:'none'
+						})
+				        this.myajax()
+				    }
+				});
+			},
 			// 初始化数据
 			myajax:function(){
 				var that=this

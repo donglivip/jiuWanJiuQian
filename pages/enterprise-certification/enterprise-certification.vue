@@ -8,7 +8,7 @@
 						<text>*</text>
 						企业名称
 					</view>
-					<input type="text" value="" placeholder="请输入企业完整名称" placeholder-class="qiugou" />
+					<input type="text" placeholder="请输入企业完整名称" placeholder-class="qiugou" v-model="sname"/>
 				</view>
 				<view class="box-cont">
 					<view class="box-news">
@@ -39,16 +39,35 @@
 export default {
 	data() {
 		return {
-			enImg:''
+			enImg:'', //营业执照
+			sname:'', //企业名称
 		};
 	},
 	methods: {
+		gosubmit:function(){
+			if(this.enImg==''||this.sname==''){
+				uni.showToast({
+					title:'营业执照和企业名称不能为空',
+					icon:'none'
+				})
+				return
+			}
+			uni.request({
+				url: '',
+				method: 'GET',
+				data: {},
+				success: res => {},
+				fail: () => {},
+				complete: () => {}
+			});
+		},
 		//跳转页面
 		opennew: function(id) {
 			uni.navigateTo({
 				url: '../' + id + '/' + id
 			});
 		},
+		// 上传营业执照
 		upimg: function() {
 			var that=this
 			//调取相册

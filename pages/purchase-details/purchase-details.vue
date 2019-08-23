@@ -31,15 +31,17 @@
 				</view>
 				<view class="header-bottom">
 					<view class="b-text">报价剩余时间</view>
-					<view class="b-news">
-						<text class="b-zi">17</text>
-						天
-						<text class="b-zi">24</text>
-						时
-						<text class="b-zi">12</text>
-						分
-						<text class="b-zi">23</text>
-						秒
+					<view class="b-news" v-if="timshow">
+						<uni-countdown
+							color="#FFFFFF"
+							background-color="#008A05"
+							border-color="#008A05"
+							:day="ri"
+							:hour="shi"
+							:minute="fen"
+							:second="miao"
+							:show-colon="false"
+						></uni-countdown>
 					</view>
 				</view>
 			</view>
@@ -174,10 +176,16 @@
 </template>
 
 <script>
+import uniCountdown from '@/components/uni-countdown/uni-countdown.vue';
 export default {
 	data() {
 		return {
-			bian: false
+			bian: false,
+			ri:0,
+			shi:0,
+			fen:0,
+			miao:0,
+			timshow:false
 		};
 	},
 	methods: {
@@ -205,8 +213,48 @@ export default {
 					}
 				}
 			});
+		},
+		// 计算剩余时间
+		timediff: function(startDate) {
+			var diff = new Date().getTime() - startDate.getTime(); //时间差的毫秒数
+
+			//计算出相差天数
+			var days = Math.floor(diff / (24 * 3600 * 1000));
+
+			//计算出小时数
+			var leave1 = diff % (24 * 3600 * 1000); //计算天数后剩余的毫秒数
+			var hours = Math.floor(leave1 / (3600 * 1000));
+			//计算相差分钟数
+			var leave2 = leave1 % (3600 * 1000); //计算小时数后剩余的毫秒数
+			var minutes = Math.floor(leave2 / (60 * 1000));
+
+			//计算相差秒数
+			var leave3 = leave2 % (60 * 1000); //计算分钟数后剩余的毫秒数
+			var seconds = Math.round(leave3 / 1000);
+
+			var returnStr = seconds + '秒';
+			this.miao=seconds
+			if (minutes > 0) {
+				returnStr = minutes + '分' + returnStr;
+				this.fen=minutes
+			}
+			if (hours > 0) {
+				returnStr = hours + '小时' + returnStr;
+				this.shi=hours
+			}
+			if (days > 0) {
+				returnStr = days + '天' + returnStr;
+				this.ri=days
+			}
+			this.timshow=true
+			console.log(returnStr)
 		}
-	}
+	},
+	onShow:function(){
+		var date = '2019-08-05 17:59:00.0'
+		this.timediff(new Date(date))
+	},
+	components: { uniCountdown }
 };
 </script>
 

@@ -25,13 +25,13 @@
 					</view>
 					<view class="t-right">
 						<view class="t-text">{{ pickerText == '' ? '请选择地区' : pickerText }}</view>
-						<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/you2.png" mode=""></image>
+						<image src="https://9w9q.oss-cn-shanghai.aliyuncs.com/img/app_img/wx_img/you2.png" mode="widthFix"></image>
 					</view>
 				</view>
 				<textarea value="" placeholder="请输入详细地址" placeholder-class="tianjia" v-model="detail"/>
 			</view>
 		</view>
-		<view class="bottom">提交</view>
+		<view class="bottom" @tap="gosubmit()">提交</view>
 		<mpvue-city-picker
 			:themeColor="themeColor"
 			ref="mpvueCityPicker"
@@ -63,6 +63,44 @@ export default {
 		this.myajax()
 	},
 	methods: {
+		gosubmit:function(){
+			if(!(/^1[3456789]\d{9}$/.test(this.phone))){ 
+				uni.showToast({
+					title:'手机号格式错误',
+					icon:'none'
+				})
+				return false; 
+			} 
+			if(this.pickerText==''){
+				uni.showToast({
+					title:'所在地区不能为空',
+					icon:'none'
+				})
+				return false; 
+			}
+			if(this.name==''){
+				uni.showToast({
+					title:'联系人姓名不能为空',
+					icon:'none'
+				})
+				return false; 
+			}
+			if(this.detail==''){
+				uni.showToast({
+					title:'详细地址不能为空',
+					icon:'none'
+				})
+				return false; 
+			}
+			uni.request({
+				url: '',
+				method: 'GET',
+				data: {},
+				success: res => {},
+				fail: () => {},
+				complete: () => {}
+			});
+		},
 		// 初始化数据
 		myajax:function(){
 			var that=this
@@ -202,8 +240,7 @@ input {
 	justify-content: flex-start;
 }
 .t-right image {
-	width: 26rpx;
-	height: 33rpx;
+	width: 12rpx;
 	margin-left: 12rpx;
 }
 textarea {
